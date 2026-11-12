@@ -20,8 +20,8 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
   title: {
-    default: "Femur Physiotherapy & Wellness Center — Uttara, Dhaka",
-    template: "%s · Femur Physiotherapy & Wellness",
+    default: "Femur Physiotherapy & Wellness Center",
+    template: "%s · Femur",
   },
   description:
     "Personalised physiotherapy, rehabilitation and wellness consultancy in Uttara, Dhaka. Book an appointment online in minutes.",

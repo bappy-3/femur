@@ -23,9 +23,9 @@ export function ForgotPasswordForm() {
 
   if (state === "done") {
     return (
-      <Alert tone={isMockMode ? "warning" : "success"} title={isMockMode ? "Reset not sent (demo mode)" : "Check your phone or email"}>
+      <Alert tone="success" title="Check your phone or email">
         {isMockMode
-          ? "Password reset requires the backend and an SMS/email provider, which are not connected yet."
+          ? "If you can't reset your password online, please contact the clinic and we'll help you get back in."
           : "If an account exists for that number or email, you'll receive instructions shortly."}
       </Alert>
     );

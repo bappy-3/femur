@@ -132,7 +132,7 @@ export function PatientStep({ gender, initial, savedPatients, onSubmit, onChange
 
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Mobile number" htmlFor="phone" error={errors.phone} hint="For your confirmation and reminders">
-            <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="01XXXXXXXXX" defaultValue={v?.phone ?? ""} aria-invalid={!!errors.phone} />
+            <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. 01712345678" defaultValue={v?.phone ?? ""} aria-invalid={!!errors.phone} />
           </Field>
           <Field label="Email" htmlFor="email" optional error={errors.email}>
             <Input id="email" name="email" type="email" autoComplete="email" defaultValue={v?.email ?? ""} aria-invalid={!!errors.email} />

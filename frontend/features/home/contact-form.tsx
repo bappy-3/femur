@@ -54,15 +54,15 @@ export function ContactForm() {
           <Input id="c-name" name="name" autoComplete="name" aria-invalid={!!errors.name} />
         </Field>
         <Field label="Mobile number" htmlFor="c-phone" error={errors.phone}>
-          <Input id="c-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="01XXXXXXXXX" aria-invalid={!!errors.phone} />
+          <Input id="c-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. 01712345678" aria-invalid={!!errors.phone} />
         </Field>
       </div>
       <Field label="Message" htmlFor="c-message" error={errors.message}>
         <Textarea id="c-message" name="message" rows={5} aria-invalid={!!errors.message} />
       </Field>
       {status === "unavailable" && (
-        <Alert tone="warning" title="Messaging not connected yet">
-          The contact form will send messages once the backend is connected. Please call or WhatsApp the clinic for now.
+        <Alert tone="info" title="Please call or WhatsApp us">
+          We couldn&apos;t send your message from this form right now. You can reach the clinic directly on the phone or WhatsApp number shown on this page.
         </Alert>
       )}
       {status === "error" && <Alert tone="error">We couldn&apos;t send your message. Please try again or call the clinic.</Alert>}

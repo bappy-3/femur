@@ -94,6 +94,7 @@ export function ConfirmationStep({ confirmation: c, clinicAddress, isSignedIn, o
             <dd className="text-ink">{clinicAddress}</dd>
           </div>
         </dl>
+        {anyDelivered ? (
         <div className="border-t border-line bg-cream/60 px-5 py-4">
           <p className="mb-2 text-xs font-semibold tracking-wide text-ink-soft uppercase">Notifications</p>
           <ul className="flex flex-wrap gap-2">
@@ -108,8 +109,10 @@ export function ConfirmationStep({ confirmation: c, clinicAddress, isSignedIn, o
               );
             })}
           </ul>
-          {!anyDelivered && <p className="mt-2 text-xs text-ink-soft">Message delivery isn&apos;t connected yet — please save your reference or add it to your calendar.</p>}
         </div>
+        ) : (
+          <p className="border-t border-line bg-cream/60 px-5 py-4 text-sm text-ink-soft">Please keep your reference number. The clinic will contact you on your mobile number if anything changes.</p>
+        )}
       </div>
 
       <div className="mt-6 flex flex-wrap justify-center gap-3 sm:justify-start">

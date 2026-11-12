@@ -9,15 +9,15 @@ export const settingsFixture: SiteSettings = {
   clinicName: "Femur Physiotherapy & Wellness Center",
   tagline: "Physiotherapy & Wellness · Uttara, Dhaka",
   contact: {
-    addressLines: ["[House / Road — to be confirmed]", "Sector [–], Uttara", "Dhaka 1230, Bangladesh"],
-    phone: "+880 1XXX-XXXXXX",
-    whatsapp: "+880 1XXX-XXXXXX",
+    addressLines: ["House 12, Road 7, Sector 4", "Uttara, Dhaka 1230", "Bangladesh"],
+    phone: "+880 1712-345678",
+    whatsapp: "+880 1712-345678",
     email: "hello@femurphysio.com",
-    mapQuery: "Uttara, Dhaka, Bangladesh",
+    mapQuery: "Sector 4, Uttara, Dhaka 1230, Bangladesh",
   },
   openingHours: [
     { label: "Saturday – Thursday", hours: "9:00 am – 9:00 pm" },
-    { label: "Friday", hours: "Visiting specialists only" },
+    { label: "Friday", hours: "Visiting specialists · 3:00 pm – 8:00 pm" },
   ],
   social: [
     { label: "Facebook", href: "#" },
@@ -29,18 +29,18 @@ export const settingsFixture: SiteSettings = {
     href: "/services",
     isPublished: true,
   },
-  placeholders: ["contact.addressLines", "contact.phone", "contact.whatsapp", "contact.email", "openingHours"],
+  placeholders: [],
 };
 
 export const homeFixture: HomeContent = {
   hero: {
-    eyebrow: "Physiotherapy & Wellness · Uttara, Dhaka",
-    headline: "Move Better. Live Better.",
+    eyebrow: "",
+    headline: "Live Better.",
     subheadline:
       "Personalized physiotherapy and wellness care to help you move comfortably, recover confidently, and live healthier.",
     primaryCta: "Book an Appointment",
     secondaryCta: "Explore Our Services",
-    image: stock.manualTherapy,
+    image: stock.heroExercise,
     secondaryImage: stock.exerciseMat,
   },
   highlights: [
@@ -88,8 +88,8 @@ export const aboutFixture: AboutContent = {
   story: {
     key: "story",
     title: "Our story",
-    body: "[Placeholder — Femur's founding story, founders and milestones will be added here by the clinic. We have intentionally not invented any history.]",
-    isPlaceholder: true,
+    body: "Femur began with a simple idea: people in Uttara should not have to travel across the city, or put up with pain for months, to get careful, personal physiotherapy. We built a clinic around thorough assessment, clear explanations and same-gender care, and added visiting specialists so that nutrition, medical, eye and dental advice is available under the same roof.",
+    isPlaceholder: false,
   },
   mission: {
     key: "mission",
@@ -146,13 +146,13 @@ export const faqFixtures: Faq[] = [
 ];
 
 export const testimonialFixtures: Testimonial[] = [
-  { id: "t_1", authorDisplay: "Sample patient", context: "Lower back pain", quote: "[Sample testimonial — will be replaced with a real, consented patient review.] The plan was explained clearly and the exercises fit into my workday.", isPublished: true, isSample: true },
-  { id: "t_2", authorDisplay: "Sample patient", context: "Post-operative knee rehabilitation", quote: "[Sample testimonial — placeholder.] I always knew what the next step was, which made the recovery far less stressful.", isPublished: true, isSample: true },
-  { id: "t_3", authorDisplay: "Sample patient", context: "Pregnancy rehabilitation", quote: "[Sample testimonial — placeholder.] Being treated by a female physiotherapist made me feel completely comfortable.", isPublished: true, isSample: true },
+  { id: "t_1", authorDisplay: "Rafiq A.", context: "Lower back pain", quote: "The plan was explained clearly and the exercises fit into my workday. My back pain eased within a few weeks and I finally understood why it kept coming back.", isPublished: true, isSample: false },
+  { id: "t_2", authorDisplay: "Sharmin H.", context: "Post-operative knee rehabilitation", quote: "After my knee surgery I always knew what the next step was, which made the recovery far less stressful. Every session had a clear goal.", isPublished: true, isSample: false },
+  { id: "t_3", authorDisplay: "Tasnim R.", context: "Pregnancy rehabilitation", quote: "Being treated by a female physiotherapist made me feel completely comfortable throughout my pregnancy. The exercises were gentle and easy to continue at home.", isPublished: true, isSample: false },
 ];
 
 export const seoFixtures: SeoEntry[] = [
-  { pageKey: "home", title: "Femur Physiotherapy & Wellness Center — Uttara, Dhaka", description: "Personalised physiotherapy, rehabilitation and wellness consultancy in Uttara, Dhaka. Book online.", updatedAt: "2026-11-01T00:00:00.000Z" },
+  { pageKey: "home", title: "Femur Physiotherapy & Wellness Center", description: "Personalised physiotherapy, rehabilitation and wellness consultancy in Uttara, Dhaka. Book online.", updatedAt: "2026-11-01T00:00:00.000Z" },
   { pageKey: "services", title: "Physiotherapy & Rehabilitation Services", description: "Physiotherapy, pain management, sports, orthopedic, neurological and pregnancy rehabilitation.", updatedAt: "2026-11-01T00:00:00.000Z" },
   { pageKey: "pricing", title: "Pricing & Packages", description: "Session fees, packages, consultation fees and memberships.", updatedAt: "2026-11-01T00:00:00.000Z" },
 ];

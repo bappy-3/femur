@@ -10,6 +10,7 @@ const u = (id: string, alt: string): ImageAsset => ({
 });
 
 export const stock = {
+  heroExercise: u("1518611012118-696072aa579a", "Women performing guided rehabilitation exercises on mats in a bright studio"),
   manualTherapy: u("1519824145371-296894a0daa9", "Physiotherapist applying hands-on manual therapy to a patient's back"),
   manualTherapyAlt: u("1519823551278-64ac92734fb1", "Close-up of a therapist's hands treating the lower back"),
   consultation: u("1666214277730-e9c7e755e5a3", "Clinician in conversation with a patient in a bright clinic"),

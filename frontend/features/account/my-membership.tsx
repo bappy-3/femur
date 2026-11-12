@@ -130,7 +130,7 @@ function PurchaseDialog({ plan, onClose, onDone }: { plan: MembershipPlan | null
     >
       <fieldset className="space-y-2">
         <legend className="mb-2 text-sm font-semibold text-ink">Payment method</legend>
-        {METHODS.map((m) => (
+        {METHODS.filter((m) => m.available).map((m) => (
           <label key={m.value} className={cn("flex cursor-pointer gap-3 rounded-xl border p-3.5", method === m.value ? "border-teal bg-mist" : "border-line", !m.available && "cursor-not-allowed opacity-50")}>
             <input type="radio" name="method" value={m.value} disabled={!m.available} checked={method === m.value} onChange={() => setMethod(m.value)} className="mt-1 accent-teal" />
             <span>

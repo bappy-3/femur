@@ -42,7 +42,7 @@ export function RegisterForm() {
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Mobile number" htmlFor="phone" error={errors.phone}>
-          <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="01XXXXXXXXX" aria-invalid={!!errors.phone} />
+          <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. 01712345678" aria-invalid={!!errors.phone} />
         </Field>
         <Field label="Gender" htmlFor="gender" error={errors.gender} hint="Used to match you with a practitioner">
           <Select id="gender" name="gender" defaultValue="" aria-invalid={!!errors.gender}>

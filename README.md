@@ -59,8 +59,7 @@ npm run dev                     # http://localhost:3000
 
 - **Public site:** `/`, `/services`, `/specialists`, `/pricing`, `/membership`, `/about`, `/contact`, `/faq`
 - **Booking:** `/booking`. This is the 7-step wizard. Availability respects gender policy and practitioner schedules.
-- **Patient portal:** go to `/login` and choose **Demo patient**, then open `/account`.
-- **Admin portal:** go to `/login` and choose **Demo admin**, then open `/admin` and `/admin/calendar`.
+- **Portals (internal review only):** set `NEXT_PUBLIC_SHOW_DEMO_LOGIN=true` in `.env.local`. `/login` then shows **Demo patient** and **Demo admin** buttons for `/account` and `/admin`. They are hidden by default so the public site shows no demo UI.
 
 Demo sessions and data exist only in **mock mode**. Data is kept in memory, per browser tab, and resets on reload.
 
@@ -95,6 +94,6 @@ This hasn't been built yet. The schema design is in [`docs/database/DATA_MODEL.m
 
 ## Important honesty notes
 
-- All prices, practitioner names and credentials, testimonials and contact details in mock mode are **samples or placeholders**, and they are marked as such in the UI. Real values are entered by admins once the backend exists.
+- The public site shows realistic **stand-in** content with no visible "demo" or "placeholder" labels. Prices, practitioner profiles, testimonials, phone/address and the clinic story all live in `frontend/services/mock/fixtures/` (and later in the admin CMS). **Replace them with real data before relying on them.**
 - Payments (bKash, Nagad, gateway), SMS, email and WhatsApp are **not connected**. The UI reports "Not configured" and never fakes success.
 - Stock photography (Unsplash) stands in until Femur supplies its own photos.

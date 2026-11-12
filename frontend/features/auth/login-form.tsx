@@ -51,7 +51,7 @@ export function LoginForm() {
     <div className="space-y-6">
       <form onSubmit={onSubmit} noValidate className="space-y-4">
         <Field label="Mobile number or email" htmlFor="identifier" error={errors.identifier}>
-          <Input id="identifier" name="identifier" autoComplete="username" placeholder="01XXXXXXXXX" aria-invalid={!!errors.identifier} />
+          <Input id="identifier" name="identifier" autoComplete="username" placeholder="e.g. 01712345678" aria-invalid={!!errors.identifier} />
         </Field>
         <Field label="Password" htmlFor="password" error={errors.password}>
           <Input id="password" name="password" type="password" autoComplete="current-password" aria-invalid={!!errors.password} />
@@ -67,7 +67,7 @@ export function LoginForm() {
         </Button>
       </form>
 
-      {isMockMode && (
+      {isMockMode && process.env.NEXT_PUBLIC_SHOW_DEMO_LOGIN === "true" && (
         <div className="rounded-xl border border-dashed border-sand-deep/40 bg-sand-soft/40 p-4">
           <p className="text-xs font-semibold tracking-wide text-sand-deep uppercase">Demo mode — no backend connected</p>
           <p className="mt-1 text-xs text-ink-soft">Preview the portals with a demo session. Real authentication is handled by the backend.</p>

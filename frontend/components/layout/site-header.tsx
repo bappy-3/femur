@@ -1,5 +1,6 @@
 import { Sparkles, UserRound } from "lucide-react";
 import Link from "next/link";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Logo } from "@/components/media/logo";
 import { MobileNav } from "@/components/navigation/mobile-nav";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button";
@@ -11,19 +12,7 @@ import type { SiteSettings } from "@/types/cms";
 export function SiteHeader({ announcement }: { announcement: SiteSettings["announcement"] }) {
   return (
     <>
-      {announcement?.isPublished && (
-        <div className="bg-teal-deep text-center text-[0.8rem] text-white/90">
-          <div className="container-page py-2">
-            {announcement.href ? (
-              <Link href={announcement.href} className="underline-offset-4 hover:underline">
-                {announcement.message} <span aria-hidden>→</span>
-              </Link>
-            ) : (
-              announcement.message
-            )}
-          </div>
-        </div>
-      )}
+      {announcement?.isPublished && <AnnouncementBar id={announcement.id} message={announcement.message} href={announcement.href} />}
       <header className="sticky top-0 z-40 border-b border-line bg-cream/90 backdrop-blur-md">
         <div className="container-page flex h-[4.25rem] items-center justify-between gap-6">
           <Link href={routes.home} aria-label="Femur — home" className="shrink-0">

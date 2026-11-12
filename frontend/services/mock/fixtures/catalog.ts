@@ -46,7 +46,7 @@ const seeds: Seed[] = [
     benefitsFor: ["Back, neck and joint pain", "Stiffness and reduced mobility", "Recovery after injury", "Work- or lifestyle-related strain"],
     approach: ["Detailed movement and pain assessment", "Hands-on manual therapy where appropriate", "A progressive exercise programme", "Clear guidance for home and work"],
     whatToExpect: ["Arrive 10 minutes early for your first visit", "Wear comfortable clothing you can move in", "Sessions typically last around 45 minutes", "You leave with a written home plan"],
-    image: stock.manualTherapy,
+    image: stock.assistedTraining,
     availabilityNote: null,
     startingPrice: bdt(1500),
     relatedSlugs: ["pain-management", "exercise-therapy", "posture-correction"],
