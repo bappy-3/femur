@@ -1,7 +1,8 @@
-import { Check, Minus, Sparkles } from "lucide-react";
+import { Check, Minus } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { brandImagery } from "@/config/brand";
+import { NiraMascot } from "@/components/media/nira-mascot";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { ButtonAnchor } from "@/components/ui/button";
@@ -11,7 +12,7 @@ import { PlanCard } from "@/features/pricing/plan-card";
 import { api } from "@/services";
 
 export const revalidate = 300;
-export const metadata: Metadata = { title: "Membership", description: "Femur membership plans — member pricing, priority booking and access to Nira, our members-only consultant." };
+export const metadata: Metadata = { title: "Membership", description: "Femur membership plans — member pricing, priority booking and access to Nira, our AI Consultant for members." };
 
 const COMPARISON = [
   { label: "Book & manage appointments", free: true, member: true },
@@ -19,7 +20,7 @@ const COMPARISON = [
   { label: "Appointment history & reminders", free: true, member: true },
   { label: "Member pricing on sessions", free: false, member: true },
   { label: "Priority booking window", free: false, member: true },
-  { label: "Nira — members-only consultant", free: false, member: true },
+  { label: "Nira — AI Consultant (members only)", free: false, member: true },
 ];
 
 export default async function MembershipPage() {
@@ -66,7 +67,7 @@ export default async function MembershipPage() {
           <div className="relative isolate overflow-hidden rounded-[1.5rem] bg-teal-deep p-8 text-white sm:p-10">
             <Image src={brandImagery.panel} alt="" fill sizes="(min-width: 1024px) 560px, 92vw" className="-z-20 object-cover" loading="lazy" />
             <div aria-hidden className="absolute inset-0 -z-10 bg-teal-deep/80" />
-            <Sparkles className="size-8 text-sand" />
+            <NiraMascot size={88} />
             <h2 className="mt-5 text-3xl font-medium">How Nira access works</h2>
             <ul className="mt-6 space-y-3 text-white/80">
               <li>1. Sign in with your Femur account.</li>

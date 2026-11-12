@@ -28,7 +28,7 @@ Femur Physiotherapy & Wellness Center (Uttara, Dhaka) needs a platform, not a br
 4. **Admin portal**: an operational control centre built around a slot-based, resource-column calendar.
 5. **Membership engine**: plans, entitlements, renewals and manual or online payments.
 6. **Commission engine**: per-practitioner commissions that keep their history.
-7. **Nira**: Femur's members-only consultant, deployed separately at `nira.femurphysio.com`. The main site has a `/nira` gateway page that asks visitors to log in and checks for an active membership before linking to the app.
+7. **Nira**: Femur's AI Consultant (mascot included), members only, deployed separately at `nira.femurphysio.com`. The main site has a `/nira` gateway page that asks visitors to log in and checks for an active membership before linking to the app.
 
 ### Guiding principles
 

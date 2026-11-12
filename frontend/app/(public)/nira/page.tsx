@@ -1,7 +1,8 @@
-import { Lock, MessageSquareHeart, Sparkles } from "lucide-react";
+import { MessageSquareHeart, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { brandImagery } from "@/config/brand";
+import { NiraMascot } from "@/components/media/nira-mascot";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section } from "@/components/sections/section";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button";
@@ -10,8 +11,8 @@ import { routes } from "@/config/site";
 import { getSession } from "@/services/session";
 
 export const metadata: Metadata = {
-  title: "Nira — Members' Consultant",
-  description: "Nira is Femur's consultant for members. Log in with an active membership to use it.",
+  title: "Nira — AI Consultant for Members",
+  description: "Nira is Femur's AI Consultant, available to members only. Log in with an active membership to use it.",
 };
 
 export const dynamic = "force-dynamic";
@@ -30,14 +31,14 @@ export default async function NiraGatePage() {
             Meet <em className="text-mint italic">Nira</em>
           </>
         }
-        intro="Nira is Femur's consultant for members — guidance on physiotherapy, exercise and recovery between your visits."
+        intro="Nira is Femur's AI Consultant, exclusively for members — guidance on physiotherapy, exercise and recovery between your visits."
       />
       <Section>
         <div className="container-page grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[1.5rem] border border-line bg-white p-8 sm:p-10">
             {isMember ? (
               <>
-                <Sparkles className="size-8 text-sand-deep" />
+                <NiraMascot size={104} />
                 <h2 className="mt-4 text-3xl font-medium text-teal-deep">Welcome back, {user!.fullName.split(" ")[0]}</h2>
                 <p className="mt-3 text-ink-soft">Your {user!.membership.planName} membership is active. You can use Nira now.</p>
                 <ButtonAnchor href={env.niraUrl} variant="accent" size="lg" className="mt-8">
@@ -46,7 +47,7 @@ export default async function NiraGatePage() {
               </>
             ) : user ? (
               <>
-                <Lock className="size-8 text-sage" />
+                <NiraMascot size={104} />
                 <h2 className="mt-4 text-3xl font-medium text-teal-deep">An active membership is required</h2>
                 <p className="mt-3 text-ink-soft">
                   You&apos;re signed in as {user.fullName}, but there&apos;s no active membership on your account
@@ -58,7 +59,7 @@ export default async function NiraGatePage() {
               </>
             ) : (
               <>
-                <Lock className="size-8 text-sage" />
+                <NiraMascot size={104} />
                 <h2 className="mt-4 text-3xl font-medium text-teal-deep">Log in to use Nira</h2>
                 <p className="mt-3 text-ink-soft">Nira is available to Femur members. Please log in to your account — if you&apos;re not a member yet, you can join in a few minutes.</p>
                 <div className="mt-8 flex flex-wrap gap-3">

@@ -40,7 +40,7 @@ export const homeFixture: HomeContent = {
       "Personalized physiotherapy and wellness care to help you move comfortably, recover confidently, and live healthier.",
     primaryCta: "Book an Appointment",
     secondaryCta: "Explore Our Services",
-    image: stock.heroExercise,
+    image: stock.heroClinic,
     secondaryImage: stock.exerciseMat,
   },
   highlights: [
@@ -140,8 +140,8 @@ export const faqFixtures: Faq[] = [
   { id: "faq_4", category: "Treatment", question: "What should I bring to my first session?", answer: "Comfortable clothing, any recent medical reports or imaging, and a list of current medications. Please arrive about 10 minutes early.", isPublished: true, sortOrder: 4 },
   { id: "faq_5", category: "Booking", question: "Are the specialist consultants available every day?", answer: "No. Our nutrition, general medicine, eye care and dental consultants visit on scheduled days. The booking page only shows days when they are available.", isPublished: true, sortOrder: 5 },
   { id: "faq_6", category: "Booking", question: "How do I cancel or reschedule?", answer: "Registered users can cancel or reschedule from My Account, subject to the cancellation window for the service. You can also call the clinic.", isPublished: true, sortOrder: 6 },
-  { id: "faq_7", category: "Membership", question: "Do I need a membership to book?", answer: "No. Anyone can book appointments, and registering a free account is optional. Membership adds benefits such as access to Nira, our members-only consultant.", isPublished: true, sortOrder: 7 },
-  { id: "faq_8", category: "Membership", question: "What is Nira?", answer: "Nira is Femur's consultant service, available to active members only. You'll be asked to log in and your membership is checked before you can use it. It offers general guidance and does not replace your treating clinician.", isPublished: true, sortOrder: 8 },
+  { id: "faq_7", category: "Membership", question: "Do I need a membership to book?", answer: "No. Anyone can book appointments, and registering a free account is optional. Membership adds benefits such as access to Nira, our AI Consultant.", isPublished: true, sortOrder: 7 },
+  { id: "faq_8", category: "Membership", question: "What is Nira?", answer: "Nira is Femur's AI Consultant, available to active members only. You'll be asked to log in and your membership is checked before you can use it. It offers general guidance and does not replace your treating clinician.", isPublished: true, sortOrder: 8 },
   { id: "faq_9", category: "Payments", question: "How can I pay?", answer: "Payment at the clinic is always available. Online payment options such as bKash and Nagad will be listed here once they are enabled.", isPublished: true, sortOrder: 9 },
 ];
 

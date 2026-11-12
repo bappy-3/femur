@@ -1,5 +1,6 @@
 import { ArrowRight, Check, MessageSquareHeart, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { NiraMascot } from "@/components/media/nira-mascot";
 import { Section } from "@/components/sections/section";
 import { brandImagery } from "@/config/brand";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button";
@@ -39,12 +40,13 @@ export function MembershipIntro({ plans }: { plans: MembershipPlan[] }) {
           <Image src={brandImagery.panel} alt="" fill sizes="(min-width: 1024px) 520px, 92vw" className="-z-20 object-cover" loading="lazy" />
           <div aria-hidden className="absolute inset-0 -z-10 bg-teal-deep/80" />
           <div className="relative">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-sand">
-              <Sparkles className="size-3.5" /> Members only
+            <NiraMascot size={96} />
+            <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-sand">
+              <Sparkles className="size-3.5" /> AI Consultant · Members only
             </span>
-            <h3 className="mt-5 text-3xl font-medium">Meet Nira</h3>
+            <h3 className="mt-3 text-3xl font-medium">Meet Nira</h3>
             <p className="mt-3 leading-relaxed text-white/75">
-              Femur&apos;s consultant for members. Ask about physiotherapy, exercise and recovery, and get help planning your care between visits.
+              Femur&apos;s AI Consultant, exclusively for members. Ask about physiotherapy, exercise and recovery, and get help planning your care between visits.
             </p>
             <div className="mt-6 space-y-2.5">
               {["What does a frozen shoulder mean?", "How should I prepare for my first session?"].map((q) => (

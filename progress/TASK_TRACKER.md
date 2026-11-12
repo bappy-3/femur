@@ -30,5 +30,5 @@ Legend: ✅ done · 🟡 partial · ⏳ todo · ❓ blocked on business decision
 | 24 | Real Femur content: photos, contact, practitioner profiles, prices, story | P0 | ❓ awaiting Femur |
 | 25 | Decide open business questions Q1–Q7 | P0 | ❓ awaiting Femur |
 | 26 | Replace stand-in staff photos/names/prices/contact/story with real data | P0 | ❓ awaiting Femur |
-| 27 | Confirm what Nira is (human consultant vs software) | P1 | ❓ awaiting Femur |
+| 27 | Confirm what Nira is | P1 | ✅ AI Consultant, members only |
 | 28 | Connect femurphysio.com in Vercel + DNS | P0 | ⏳ needs domain access |

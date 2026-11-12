@@ -53,9 +53,9 @@
 **Why:** stock photos of strangers presented as staff would misrepresent the clinic.
 
 ### ADR-013 — Nira: members-only consultant, reached through a gateway page
-**Decision:** every "Ask Nira" CTA links to `/nira` on the main site. That page asks visitors to log in, sends non-members to *Become a member*, and only shows *Open Nira* (→ `nira.femurphysio.com`) to active members. Public copy calls Nira a "consultant", not an "AI assistant".
+**Decision:** every "Ask Nira" CTA links to `/nira` on the main site. That page asks visitors to log in, sends non-members to *Become a member*, and only shows *Open Nira* (→ `nira.femurphysio.com`) to active members. Public copy calls Nira the **AI Consultant**; it has a mascot (an otter in a white coat, `public/nira-mascot.jpg`).
 **Why:** the clinic describes Nira as a members-only consultant. The gateway page is a UX convenience only; the Nira app and backend must still verify the session and entitlement on every request.
-**Open question:** is Nira a human consultant, a software assistant, or both? The backend `nira` module (LLM gateway, quotas) was designed for a software assistant and must be revisited once this is confirmed.
+**Confirmed:** Nira is an AI Consultant, members only, so the backend `nira` module design (LLM gateway, quotas, safety policy) stands.
 
 ### ADR-014 — "Why Femur" merged into About
 **Decision:** the separate Why Femur page and nav tab are removed. The content is a section (`#why-femur`) on `/about`, and `/why-femur` redirects there.

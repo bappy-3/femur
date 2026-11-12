@@ -27,6 +27,11 @@ export const portraits = {
 } as const;
 
 export const stock = {
+  physioGuided: u("1645005513713-9e2b92a687d3", "Physiotherapist guiding a patient through a supervised exercise"),
+  painNeck: u("1767972463825-96eaa9e0766b", "Highlighted red area of pain on a patient's neck and shoulder"),
+  rehabClinic: u("1773227055624-07b515ba87c5", "Caregiver assisting an older patient during rehabilitation"),
+  kneeExercise: u("1649751361457-01d3a696c7e6", "Physiotherapist guiding a patient's knee exercise"),
+  heroClinic: u("1709880754445-8ffbd7e6ab3a", "Physiotherapist and patient working together in a bright rehabilitation studio"),
   groupExercise: u("1518310383802-640c2de311b2", "Women exercising together in a bright studio"),
   yoga: u("1600881333168-2ef49b341f30", "Person stretching in a downward dog on a mat"),
   elderCare: u("1576765608866-5b51046452be", "Clinician caring for an older patient"),

@@ -1,5 +1,10 @@
 # Development Log
 
+## 2026-11-12 (UI update & Nira mascot)
+- Light, airy homepage hero (bright rehab-clinic photo, soft cream wash, dark text).
+- Physiotherapy now shows a therapist guiding an exercise; Pain Management shows a highlighted red pain area; Contact and Services heroes use physiotherapy photos instead of gym shots.
+- Nira renamed **AI Consultant** across the site; mascot added (`components/media/nira-mascot.tsx`) on the home Nira card, the membership page and the `/nira` gateway. Original art kept in `docs/brand/`.
+
 ## 2026-11-12 (later) — Go-live polish & domain readiness
 - Removed all visible demo/placeholder labels; content now reads as a finished site (stand-in data kept in fixtures).
 - Hero redesigned: full-bleed exercise photo, centred "Live Better.", no eyebrow box. Dismissible announcement bar. Official logo used for favicon and header.

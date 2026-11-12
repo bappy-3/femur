@@ -6,12 +6,12 @@ const photo = (id: string, w = 1800) => `https://images.unsplash.com/photo-${id}
 
 export const brandImagery = {
   authPanel: { src: photo("1666214277730-e9c7e755e5a3", 1600), alt: "" },
-  services: photo("1518310383802-640c2de311b2"),
+  services: photo("1645005513713-9e2b92a687d3"),
   about: photo("1581056771107-24ca5f033842"),
   specialists: photo("1666214277730-e9c7e755e5a3"),
-  pricing: photo("1571019613454-1cb2f99b2d8b"),
+  pricing: photo("1709880754472-be89c13abc52"),
   membership: photo("1518611012118-696072aa579a"),
-  contact: photo("1540497077202-7c8a3999166f"),
+  contact: photo("1649751361457-01d3a696c7e6"),
   story: photo("1576765608866-5b51046452be"),
   nira: photo("1666214277730-e9c7e755e5a3"),
   cta: photo("1518611012118-696072aa579a"),

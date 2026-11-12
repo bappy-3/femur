@@ -16,7 +16,6 @@
 - **Specialist photos, names and qualifications are stand-ins.** The portraits are stock photos of strangers and the names/credentials are invented. Presenting them as Femur's real staff misleads patients. Replace all of it with real, consented staff details in `frontend/services/mock/fixtures/practitioners.ts` (or the admin portal once the backend exists).
 - **Prices, testimonials, phone/WhatsApp/address/email, and the clinic story** are stand-ins and must be replaced with real, approved content.
 - **The site runs on built-in data**, so bookings, the contact form and logins don't reach the clinic. Don't direct real patients to it until the backend is connected.
-- **Nira's nature is unconfirmed** (human consultant vs software). See ADR-013.
 
 ## Other stand-ins
 - Photography is Unsplash stock (page chrome, services, staff portraits) until Femur supplies its own.
