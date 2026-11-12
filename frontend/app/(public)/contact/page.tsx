@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactDetails, MapEmbed } from "@/components/sections/contact-panel";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { ContactForm } from "@/features/home/contact-form";
 import { api } from "@/services";
@@ -11,7 +12,7 @@ export default async function ContactPage() {
   const settings = await api.cms.getSettings();
   return (
     <>
-      <PageHero eyebrow="Contact" title="We're here to help" intro="Call, WhatsApp or send us a message. For appointments, online booking is the fastest option." />
+      <PageHero image={brandImagery.contact} eyebrow="Contact" title="We're here to help" intro="Call, WhatsApp or send us a message. For appointments, online booking is the fastest option." />
       <section className="py-16 sm:py-20">
         <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <ContactDetails settings={settings} />

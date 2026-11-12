@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/sections/cta-band";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { Alert } from "@/components/ui/feedback";
 import { PlaceholderMark } from "@/components/ui/placeholder";
@@ -13,7 +14,7 @@ export default async function OurStoryPage() {
   const blocks = [about.story, about.mission, about.vision, about.philosophy];
   return (
     <>
-      <PageHero eyebrow="Our story" title="How Femur came to be" />
+      <PageHero image={brandImagery.story} eyebrow="Our story" title="How Femur came to be" />
       <section className="py-16 sm:py-20">
         <div className="container-page max-w-3xl">
           {about.story.isPlaceholder && (

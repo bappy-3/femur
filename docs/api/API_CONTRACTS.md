@@ -22,7 +22,7 @@
 
 | Method & path | Purpose |
 | --- | --- |
-| `GET /cms/pages/:key` | Published page with ordered sections (`home`, `about`, `our-story`, `why-femur`, `pricing`, `contact`) |
+| `GET /cms/pages/:key` | Published page with ordered sections (`home`, `about` (includes the Why Femur section), `our-story`, `pricing`, `contact`) |
 | `GET /cms/settings` | Contact, opening hours, social links, announcement |
 | `GET /cms/faqs?category=` | Published FAQs |
 | `GET /cms/testimonials` | Published testimonials |

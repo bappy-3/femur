@@ -10,6 +10,7 @@ import { MembershipIntro } from "@/features/home/membership-intro";
 import { SpecialistsPreview } from "@/features/home/specialists-preview";
 import { Testimonials } from "@/features/home/testimonials";
 import { WhyFemurSection } from "@/features/home/why-femur";
+import { env } from "@/config/env";
 import { api } from "@/services";
 
 export const revalidate = 300;
@@ -26,8 +27,20 @@ export default async function HomePage() {
     api.cms.listFaqs(),
   ]);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "PhysicalTherapy",
+    name: settings.clinicName,
+    url: env.siteUrl,
+    telephone: settings.contact.phone,
+    email: settings.contact.email,
+    address: { "@type": "PostalAddress", streetAddress: settings.contact.addressLines[0], addressLocality: "Dhaka", addressCountry: "BD" },
+    image: home.hero.image.src,
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Hero content={home.hero} />
       <Highlights items={home.highlights} />
       <CoreServices services={physio} />

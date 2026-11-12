@@ -19,7 +19,7 @@ export const membershipPlanFixtures: MembershipPlan[] = [
   {
     id: "plan_monthly", slug: "monthly-care", name: "Monthly Care", tagline: "Stay on track between sessions",
     billingPeriod: "MONTHLY", durationDays: 30, price: bdt(1500),
-    benefits: ["Full access to Nira, Femur's AI wellness assistant", "Member discount on physiotherapy sessions", "Priority booking window", "Exercise reminders and progress tips"],
+    benefits: ["Full access to Nira, Femur's members-only consultant", "Member discount on physiotherapy sessions", "Priority booking window", "Exercise reminders and progress tips"],
     entitlements: { "nira.access": true, "nira.daily_messages": 50, "discount.percent.physiotherapy": 10, "priority_booking.days_ahead": 45 },
     includesNira: true, isHighlighted: true, isActive: true, isPublic: true, sortOrder: 1,
   },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/sections/cta-band";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { ConsultancyCard, ServiceCard } from "@/features/service-catalog/service-card";
@@ -16,6 +17,7 @@ export default async function ServicesPage() {
   return (
     <>
       <PageHero
+        image={brandImagery.services}
         eyebrow="Our services"
         title={
           <>

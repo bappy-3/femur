@@ -9,7 +9,28 @@ const u = (id: string, alt: string): ImageAsset => ({
   alt,
 });
 
+const portrait = (id: string, alt: string): ImageAsset => ({
+  src: `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&crop=faces&w=700&h=875&q=80`,
+  alt,
+});
+
+/** Stand-in staff portraits (Unsplash licence). Replace via the admin portal with real clinic photos. */
+export const portraits = {
+  maleA: portrait("1507003211169-0a1dd7228f2d", "Portrait of a male physiotherapist"),
+  maleB: portrait("1622253692010-333f2da6031d", "Portrait of a male physiotherapist in scrubs"),
+  femaleA: portrait("1643297654416-05795d62e39c", "Portrait of a female physiotherapist with a stethoscope"),
+  femaleB: portrait("1580489944761-15a19d654956", "Portrait of a smiling female physiotherapist"),
+  nutritionist: portrait("1573497019940-1c28c88b4f3e", "Portrait of a smiling nutritionist"),
+  physician: portrait("1472099645785-5658abf4ff4e", "Portrait of a general physician"),
+  eye: portrait("1623854767648-e7bb8009f0db", "Portrait of a female eye specialist in a white coat"),
+  dental: portrait("1612349317150-e413f6a5b16d", "Portrait of a dental surgeon in a white coat"),
+} as const;
+
 export const stock = {
+  groupExercise: u("1518310383802-640c2de311b2", "Women exercising together in a bright studio"),
+  yoga: u("1600881333168-2ef49b341f30", "Person stretching in a downward dog on a mat"),
+  elderCare: u("1576765608866-5b51046452be", "Clinician caring for an older patient"),
+  weights: u("1571019614242-c5c5dee9f50b", "Coach guiding a client through a supervised exercise"),
   heroExercise: u("1518611012118-696072aa579a", "Women performing guided rehabilitation exercises on mats in a bright studio"),
   manualTherapy: u("1519824145371-296894a0daa9", "Physiotherapist applying hands-on manual therapy to a patient's back"),
   manualTherapyAlt: u("1519823551278-64ac92734fb1", "Close-up of a therapist's hands treating the lower back"),

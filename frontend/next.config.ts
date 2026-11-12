@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const NIRA_URL = process.env.NEXT_PUBLIC_NIRA_URL ?? "https://nira.femurphysio.com";
-
 // Guard: never ship sample data to production.
 if (process.env.DEPLOY_ENV === "production" && (process.env.NEXT_PUBLIC_API_MODE ?? "mock") !== "live") {
   throw new Error("Refusing to build for production with NEXT_PUBLIC_API_MODE != 'live'. Mock data must not be deployed.");
@@ -28,7 +26,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
   async redirects() {
-    return [{ source: "/nira", destination: NIRA_URL, permanent: false }];
+    return [
+      // Canonical host: send www to the apex domain (no-op until the domain is connected)
+      { source: "/:path*", has: [{ type: "host", value: "www.femurphysio.com" }], destination: "https://femurphysio.com/:path*", permanent: true },
+    ];
   },
   async headers() {
     return [

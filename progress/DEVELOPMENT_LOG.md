@@ -1,5 +1,12 @@
 # Development Log
 
+## 2026-11-12 (later) — Go-live polish & domain readiness
+- Removed all visible demo/placeholder labels; content now reads as a finished site (stand-in data kept in fixtures).
+- Hero redesigned: full-bleed exercise photo, centred "Live Better.", no eyebrow box. Dismissible announcement bar. Official logo used for favicon and header.
+- Navigation: removed Why Femur (now a section on About), added **Become a Member**. Nira reworded as a members-only consultant and routed through a `/nira` gateway (login → membership check → open).
+- Photography: specialist portraits, exercise-based service images, photo page heroes, photo CTA band, photo panels, consultancy card images.
+- Domain readiness: `robots.ts`, `sitemap.ts`, social-share image, canonical URL, JSON-LD, `www`→apex redirect, DNS steps in DEPLOYMENT.md.
+
 ## 2026-11-12 — Architecture + complete frontend (mock data)
 
 ### Implemented

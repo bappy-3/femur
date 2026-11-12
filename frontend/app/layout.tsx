@@ -25,7 +25,10 @@ export const metadata: Metadata = {
   },
   description:
     "Personalised physiotherapy, rehabilitation and wellness consultancy in Uttara, Dhaka. Book an appointment online in minutes.",
-  openGraph: { type: "website", locale: "en_BD", siteName: "Femur Physiotherapy & Wellness Center" },
+  alternates: { canonical: "/" },
+  keywords: ["physiotherapy Uttara", "physiotherapist Dhaka", "pain management", "rehabilitation", "sports injury", "pregnancy physiotherapy"],
+  openGraph: { type: "website", locale: "en_BD", siteName: "Femur Physiotherapy & Wellness Center", url: "/" },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

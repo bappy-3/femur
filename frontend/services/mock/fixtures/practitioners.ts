@@ -1,4 +1,5 @@
 import type { CommissionRule, Practitioner } from "@/types/practitioner";
+import { portraits } from "./images";
 
 /**
  * PLACEHOLDER practitioners. Femur has not yet supplied names, photos or credentials,
@@ -18,7 +19,6 @@ const PHYSIO = [
 
 const base = {
   isPlaceholder: false,
-  photo: null,
   qualifications: ["BSc in Physiotherapy (BHPI)"],
   experienceYears: null,
   isActive: true,
@@ -31,6 +31,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_physio_m1",
     slug: "physiotherapist-m1",
     displayName: "Dr. Tahsin Rahman",
+    photo: portraits.maleA,
     gender: "MALE",
     designation: "Senior Physiotherapist",
     specialization: "Musculoskeletal & sports rehabilitation",
@@ -51,6 +52,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_physio_m2",
     slug: "physiotherapist-m2",
     displayName: "Dr. Arman Hossain",
+    photo: portraits.maleB,
     gender: "MALE",
     designation: "Physiotherapist",
     specialization: "Orthopedic & post-operative rehabilitation",
@@ -69,6 +71,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_physio_f1",
     slug: "physiotherapist-f1",
     displayName: "Dr. Nusrat Jahan",
+    photo: portraits.femaleA,
     gender: "FEMALE",
     designation: "Senior Physiotherapist",
     specialization: "Women's health & pregnancy rehabilitation",
@@ -89,6 +92,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_physio_f2",
     slug: "physiotherapist-f2",
     displayName: "Dr. Farhana Islam",
+    photo: portraits.femaleB,
     gender: "FEMALE",
     designation: "Physiotherapist",
     specialization: "Neurological & exercise therapy",
@@ -107,6 +111,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_nutrition",
     slug: "nutritionist",
     displayName: "Ms. Sadia Karim",
+    photo: portraits.nutritionist,
     gender: "FEMALE",
     designation: "Consultant Nutritionist",
     specialization: "Clinical & recovery nutrition",
@@ -125,6 +130,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_gp",
     slug: "general-physician",
     displayName: "Dr. Imtiaz Ahmed",
+    photo: portraits.physician,
     gender: "MALE",
     designation: "Consultant, General Medicine",
     specialization: "General medicine",
@@ -143,6 +149,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_eye",
     slug: "eye-specialist",
     displayName: "Dr. Shirin Akter",
+    photo: portraits.eye,
     gender: "FEMALE",
     designation: "Consultant, Ophthalmology",
     specialization: "Eye care",
@@ -161,6 +168,7 @@ export const practitionerFixtures: Practitioner[] = [
     id: "prc_dental",
     slug: "dental-surgeon",
     displayName: "Dr. Rezaul Karim",
+    photo: portraits.dental,
     gender: "MALE",
     designation: "Consultant, Dental Surgery",
     specialization: "General dentistry",

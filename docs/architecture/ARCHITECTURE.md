@@ -28,7 +28,7 @@ Femur Physiotherapy & Wellness Center (Uttara, Dhaka) needs a platform, not a br
 4. **Admin portal**: an operational control centre built around a slot-based, resource-column calendar.
 5. **Membership engine**: plans, entitlements, renewals and manual or online payments.
 6. **Commission engine**: per-practitioner commissions that keep their history.
-7. **Nira**: an AI wellness assistant, deployed separately at `nira.femurphysio.com` and gated by membership.
+7. **Nira**: Femur's members-only consultant, deployed separately at `nira.femurphysio.com`. The main site has a `/nira` gateway page that asks visitors to log in and checks for an active membership before linking to the app.
 
 ### Guiding principles
 
@@ -134,7 +134,8 @@ app/
 │   ├── page.tsx                     /                 Homepage
 │   ├── about/                       /about
 │   ├── our-story/                   /our-story
-│   ├── why-femur/                   /why-femur
+│   ├── why-femur/                   /why-femur  (redirects to /about#why-femur)
+│   ├── nira/                        /nira  (members-only gateway: login / become a member / open Nira)
 │   ├── services/ , services/[slug]  /services, /services/physiotherapy …
 │   ├── specialists/                 /specialists
 │   ├── pricing/                     /pricing
@@ -148,7 +149,7 @@ app/
                          /practitioners[/id], /services, /pricing, /cms, /finance
 ```
 
-`/nira` → **redirect** (via `next.config.ts`) to `https://nira.femurphysio.com`. Every "Ask Nira" CTA links there directly.
+`/nira` is a **gateway page** on the main site. Every "Ask Nira" CTA links to it. Logged-out visitors are asked to log in (`/login?next=/nira`), logged-in users without an active membership are sent to *Become a member*, and active members get an *Open Nira* button to `NEXT_PUBLIC_NIRA_URL`. This page is a convenience: the Nira app and backend still check membership on every request.
 
 ### 4.3 Layers (dependency direction ↓ only)
 

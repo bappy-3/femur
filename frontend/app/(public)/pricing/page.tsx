@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/sections/cta-band";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { DemoNotice } from "@/components/ui/placeholder";
@@ -14,7 +15,7 @@ export default async function PricingPage() {
   const [items, plans] = await Promise.all([api.pricing.listPriceItems(), api.pricing.listPlans()]);
   return (
     <>
-      <PageHero eyebrow="Pricing" title="Clear pricing, no surprises" intro="Pay per session, save with a treatment package, or become a member for ongoing support. Payment at the clinic is always available." />
+      <PageHero image={brandImagery.pricing} eyebrow="Pricing" title="Clear pricing, no surprises" intro="Pay per session, save with a treatment package, or become a member for ongoing support. Payment at the clinic is always available." />
       <Section>
         <div className="container-page">
           <DemoNotice className="mb-8" />

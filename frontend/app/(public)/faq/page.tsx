@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqList } from "@/components/sections/faq-list";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { api } from "@/services";
 
@@ -17,7 +18,7 @@ export default async function FaqPage() {
   };
   return (
     <>
-      <PageHero eyebrow="Help centre" title="Frequently asked questions" intro="Can't find what you're looking for? Contact the clinic and we'll be happy to help." />
+      <PageHero image={brandImagery.contact} eyebrow="Help centre" title="Frequently asked questions" intro="Can't find what you're looking for? Contact the clinic and we'll be happy to help." />
       <section className="py-16 sm:py-20">
         <div className="container-page grid gap-12 lg:grid-cols-[14rem_1fr]">
           <nav aria-label="FAQ categories" className="hidden lg:block">

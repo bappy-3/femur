@@ -51,12 +51,15 @@ export function ConsultancyCard({ service }: { service: Service }) {
     <Link
       href={routes.service(service.slug)}
       data-reveal
-      className="group flex items-start gap-4 rounded-[var(--radius-card)] border border-line bg-white p-5 transition-colors hover:border-sage/50"
+      className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-white transition-colors hover:border-sage/50 sm:flex-row"
     >
-      <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-mist text-teal">
-        <ServiceIcon icon={service.icon} className="size-5" />
+      <span className="relative block aspect-[16/9] shrink-0 bg-mist sm:aspect-auto sm:w-36">
+        <Image src={service.image.src} alt={service.image.alt} fill sizes="(min-width: 640px) 144px, 92vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+        <span className="absolute top-2.5 left-2.5 grid size-8 place-items-center rounded-full bg-white/95 text-teal">
+          <ServiceIcon icon={service.icon} className="size-4" />
+        </span>
       </span>
-      <span className="min-w-0 flex-1">
+      <span className="min-w-0 flex-1 p-5">
         <span className="block font-semibold text-ink">{service.name}</span>
         <span className="mt-1 block text-sm text-ink-soft">{service.summary}</span>
         {service.availabilityNote && (

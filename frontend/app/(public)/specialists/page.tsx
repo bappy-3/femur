@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button";
@@ -19,11 +20,12 @@ export default async function SpecialistsPage() {
   return (
     <>
       <PageHero
+        image={brandImagery.specialists}
         eyebrow="Our team"
         title="Specialists who take the time to understand you"
         intro="Male patients are treated by male physiotherapists and female patients by female physiotherapists. Visiting consultants hold sessions on scheduled days."
       >
-        <ButtonLink href={routes.booking}>Book an appointment</ButtonLink>
+        <ButtonLink href={routes.booking} variant="accent">Book an appointment</ButtonLink>
       </PageHero>
       <Section>
         <div className="container-page">

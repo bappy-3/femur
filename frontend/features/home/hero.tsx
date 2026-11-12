@@ -1,7 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button";
-import { env } from "@/config/env";
 import { routes } from "@/config/site";
 import type { HeroContent } from "@/types/cms";
 
@@ -24,7 +23,7 @@ export function Hero({ content }: { content: HeroContent }) {
           <ButtonLink href={routes.services} variant="inverse" size="lg">
             {content.secondaryCta}
           </ButtonLink>
-          <ButtonAnchor href={env.niraUrl} variant="secondary" size="lg" className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white">
+          <ButtonAnchor href={routes.nira} variant="secondary" size="lg" className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white">
             <Sparkles className="size-4 text-sand" /> Ask Nira
           </ButtonAnchor>
         </div>

@@ -59,3 +59,25 @@ Error tracking (Sentry or a self-hosted equivalent), uptime checks on `/` and `a
 
 A mock-mode deployment is a **design preview only**: sample data, demo logins, nothing persists. Do not point the real domain at it.
 5. Domains: add `femurphysio.com` and `www` to this project; `nira.` and `api.` go to their own projects/hosts.
+
+## Connecting the domain (femurphysio.com)
+
+The site is domain-ready: canonical URL, `robots.txt`, `sitemap.xml`, social-share image and structured data are all generated from `NEXT_PUBLIC_SITE_URL`, and `www.femurphysio.com` redirects to the apex.
+
+1. In Vercel: Project → **Settings → Domains** → add `femurphysio.com` and `www.femurphysio.com`.
+2. At your DNS provider, add the records Vercel shows. Typically:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `76.76.21.21` |
+| CNAME | `www` | `cname.vercel-dns.com` |
+| CNAME | `nira` | the Nira project's Vercel target (when that app exists) |
+| CNAME / A | `api` | the backend host (when it exists) |
+
+   Always prefer the exact values Vercel displays for your project.
+3. Set `NEXT_PUBLIC_SITE_URL=https://femurphysio.com` in Vercel and redeploy.
+4. Wait for DNS and the automatic HTTPS certificate (minutes to a few hours).
+5. Submit `https://femurphysio.com/sitemap.xml` to Google Search Console and Bing Webmaster Tools.
+6. Check a share preview (WhatsApp/Facebook) and `https://femurphysio.com/robots.txt`.
+
+Until the backend exists the site runs on built-in data. Do not point real patients at it yet.

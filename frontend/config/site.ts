@@ -1,4 +1,3 @@
-import { env } from "./env";
 
 /**
  * Structural site configuration (routes & navigation).
@@ -8,7 +7,7 @@ export const routes = {
   home: "/",
   about: "/about",
   ourStory: "/our-story",
-  whyFemur: "/why-femur",
+  whyFemur: "/about#why-femur",
   services: "/services",
   service: (slug: string) => `/services/${slug}`,
   specialists: "/specialists",
@@ -42,16 +41,17 @@ export const routes = {
     cms: "/admin/cms",
     finance: "/admin/finance",
   },
-  nira: env.niraUrl,
+  /** Members-only gateway page on this site; the Nira app itself lives at env.niraUrl. */
+  nira: "/nira",
 } as const;
 
 export const mainNav = [
   { label: "Services", href: routes.services },
   { label: "Specialists", href: routes.specialists },
-  { label: "Why Femur", href: routes.whyFemur },
   { label: "Pricing", href: routes.pricing },
   { label: "About", href: routes.about },
   { label: "Contact", href: routes.contact },
+  { label: "Become a Member", href: routes.membership },
 ] as const;
 
 export const footerNav = {
@@ -64,7 +64,8 @@ export const footerNav = {
   Care: [
     { label: "All services", href: routes.services },
     { label: "Pricing", href: routes.pricing },
-    { label: "Membership", href: routes.membership },
+    { label: "Become a member", href: routes.membership },
+    { label: "Nira (members)", href: routes.nira },
     { label: "Book an appointment", href: routes.booking },
   ],
   Help: [

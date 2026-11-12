@@ -1,15 +1,17 @@
 import { Check, Minus, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { ButtonAnchor } from "@/components/ui/button";
 import { DemoNotice } from "@/components/ui/placeholder";
-import { env } from "@/config/env";
+import { routes } from "@/config/site";
 import { PlanCard } from "@/features/pricing/plan-card";
 import { api } from "@/services";
 
 export const revalidate = 300;
-export const metadata: Metadata = { title: "Membership", description: "Femur membership plans — member pricing, priority booking and access to Nira, our AI wellness assistant." };
+export const metadata: Metadata = { title: "Membership", description: "Femur membership plans — member pricing, priority booking and access to Nira, our members-only consultant." };
 
 const COMPARISON = [
   { label: "Book & manage appointments", free: true, member: true },
@@ -17,14 +19,14 @@ const COMPARISON = [
   { label: "Appointment history & reminders", free: true, member: true },
   { label: "Member pricing on sessions", free: false, member: true },
   { label: "Priority booking window", free: false, member: true },
-  { label: "Nira — AI wellness assistant", free: false, member: true },
+  { label: "Nira — members-only consultant", free: false, member: true },
 ];
 
 export default async function MembershipPage() {
   const plans = await api.pricing.listPlans();
   return (
     <>
-      <PageHero eyebrow="Membership" title="Stay supported between sessions" intro="Registering is free and lets you book. Membership is optional and adds ongoing benefits — including full access to Nira." />
+      <PageHero image={brandImagery.membership} eyebrow="Membership" title="Stay supported between sessions" intro="Registering is free and lets you book. Membership is optional and adds ongoing benefits — including full access to Nira." />
       <Section>
         <div className="container-page">
           <DemoNotice className="mb-8" />
@@ -61,19 +63,21 @@ export default async function MembershipPage() {
               </tbody>
             </table>
           </div>
-          <div className="rounded-[1.5rem] bg-teal-deep p-8 text-white sm:p-10">
+          <div className="relative isolate overflow-hidden rounded-[1.5rem] bg-teal-deep p-8 text-white sm:p-10">
+            <Image src={brandImagery.panel} alt="" fill sizes="(min-width: 1024px) 560px, 92vw" className="-z-20 object-cover" loading="lazy" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-teal-deep/80" />
             <Sparkles className="size-8 text-sand" />
             <h2 className="mt-5 text-3xl font-medium">How Nira access works</h2>
             <ul className="mt-6 space-y-3 text-white/80">
               <li>1. Sign in with your Femur account.</li>
               <li>2. Have an active membership that includes Nira.</li>
-              <li>3. Open nira.femurphysio.com — access is checked on every request.</li>
+              <li>3. Open Nira — your membership is checked every time you use it.</li>
             </ul>
             <p className="mt-6 text-sm text-white/55">
-              If a membership expires or is suspended, access ends immediately. Nira provides general information only and never diagnoses or prescribes.
+              If a membership expires or is suspended, access ends immediately. Nira offers general guidance only and does not replace your treating clinician.
             </p>
-            <ButtonAnchor href={env.niraUrl} variant="accent" className="mt-8">
-              Visit Nira
+            <ButtonAnchor href={routes.nira} variant="accent" className="mt-8">
+              Go to Nira
             </ButtonAnchor>
           </div>
         </div>

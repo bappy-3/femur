@@ -125,7 +125,7 @@ CREATE INDEX ON appointments (patient_id, starts_at DESC);
 | `nira_conversations` | id, user_id, title, created_at, archived_at |
 | `nira_messages` | id, conversation_id, role (`user`,`assistant`,`system`), content, tokens_in, tokens_out, safety_flags (jsonb) |
 | `nira_usage` | user_id, date, messages, tokens — PK(user_id, date) |
-| `cms_pages` | id, key (`home`,`about`,`our-story`,`why-femur`…), title, seo (jsonb), status (`DRAFT`,`PUBLISHED`), published_at |
+| `cms_pages` | id, key (`home`,`about`,`our-story`…), title, seo (jsonb), status (`DRAFT`,`PUBLISHED`), published_at |
 | `cms_sections` | id, page_id, key (`hero`,`approach`…), type, content (jsonb, validated by section schema), sort_order, is_visible |
 | `testimonials` | id, author_display (initials allowed), context, quote, rating (nullable), consent_recorded (bool, required to publish), is_published |
 | `faqs` | id, category, question, answer, sort_order, is_published |

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/sections/cta-band";
+import { brandImagery } from "@/config/brand";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section, SectionHeading } from "@/components/sections/section";
-import { PlaceholderMark } from "@/components/ui/placeholder";
+import { WhyFemurGrid } from "@/features/about/why-femur-grid";
 import { routes } from "@/config/site";
 import type { StoryBlock } from "@/types/cms";
 import { api } from "@/services";
@@ -16,7 +17,7 @@ function Statement({ block }: { block: StoryBlock }) {
   return (
     <div data-reveal className="rounded-[var(--radius-card)] border border-line bg-white p-7">
       <h3 className="flex items-center gap-2 font-display text-2xl font-medium text-teal-deep">
-        {block.title} {block.isPlaceholder && <PlaceholderMark />}
+        {block.title}
       </h3>
       <p className="mt-3 leading-relaxed text-ink-soft">{block.body}</p>
     </div>
@@ -24,10 +25,10 @@ function Statement({ block }: { block: StoryBlock }) {
 }
 
 export default async function AboutPage() {
-  const about = await api.cms.getAbout();
+  const [about, why] = await Promise.all([api.cms.getAbout(), api.cms.getWhyFemur()]);
   return (
     <>
-      <PageHero eyebrow="About Femur" title={<>Physiotherapy-led care, <em className="text-sage italic">built around people</em></>} intro={about.intro} />
+      <PageHero image={brandImagery.about} eyebrow="About Femur" title={<>Physiotherapy-led care, <em className="text-sage italic">built around people</em></>} intro={about.intro} />
 
       <Section>
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
@@ -78,7 +79,13 @@ export default async function AboutPage() {
           </ol>
         </div>
       </Section>
-      <div className="pt-20">
+      <Section id="why-femur" className="scroll-mt-20">
+        <div className="container-page">
+          <SectionHeading index="03" eyebrow="Why Femur" title="Thoughtful care, clearly delivered" intro={why.intro} />
+          <WhyFemurGrid content={why} />
+        </div>
+      </Section>
+      <div className="pt-4">
         <CtaBand title="Come and meet us" body="Book an assessment and experience the Femur approach for yourself." />
       </div>
     </>

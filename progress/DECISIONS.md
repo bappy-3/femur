@@ -52,5 +52,16 @@
 **Decision:** practitioners use neutral names ("Physiotherapist A") and monogram avatars until real profiles are supplied.
 **Why:** stock photos of strangers presented as staff would misrepresent the clinic.
 
-### ADR-013 — Nira is linked, not embedded
-**Decision:** every "Ask Nira" CTA links to `https://nira.femurphysio.com`, and `/nira` redirects there. Membership gating happens in the Nira app and backend.
+### ADR-013 — Nira: members-only consultant, reached through a gateway page
+**Decision:** every "Ask Nira" CTA links to `/nira` on the main site. That page asks visitors to log in, sends non-members to *Become a member*, and only shows *Open Nira* (→ `nira.femurphysio.com`) to active members. Public copy calls Nira a "consultant", not an "AI assistant".
+**Why:** the clinic describes Nira as a members-only consultant. The gateway page is a UX convenience only; the Nira app and backend must still verify the session and entitlement on every request.
+**Open question:** is Nira a human consultant, a software assistant, or both? The backend `nira` module (LLM gateway, quotas) was designed for a software assistant and must be revisited once this is confirmed.
+
+### ADR-014 — "Why Femur" merged into About
+**Decision:** the separate Why Femur page and nav tab are removed. The content is a section (`#why-femur`) on `/about`, and `/why-femur` redirects there.
+
+### ADR-015 — "Become a Member" is a top-level navigation item
+**Decision:** the nav links to `/membership` with the label *Become a Member*, so membership and the members-only Nira are easy to find.
+
+### ADR-016 — Photographic page chrome and domain readiness
+**Decision:** page heroes, CTA bands and panels use photography (via `config/brand.ts`) rather than flat colour blocks. SEO and social files (`robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, canonical metadata, JSON-LD) are generated from `NEXT_PUBLIC_SITE_URL`, and `www` redirects to the apex domain.

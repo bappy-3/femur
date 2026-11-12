@@ -1,6 +1,6 @@
 # Femur Physiotherapy & Wellness Center — Digital Platform
 
-The platform for **Femur Physiotherapy & Wellness Center** (Uttara, Dhaka). It covers the public website, online appointment booking, the patient portal, the admin and operations portal, memberships, practitioner commissions, and the link to **Nira**, the AI wellness assistant at `nira.femurphysio.com`.
+The platform for **Femur Physiotherapy & Wellness Center** (Uttara, Dhaka). It covers the public website, online appointment booking, the patient portal, the admin and operations portal, memberships, practitioner commissions, and the gateway to **Nira**, the members-only consultant at `nira.femurphysio.com`.
 
 > **Current state (2026-11-12):** the architecture is documented and the **frontend is built**. It runs on clearly labelled sample data ("mock mode"). The backend (NestJS + PostgreSQL), real payments and notifications, and the Nira app are **not built yet**. See [`progress/PROJECT_STATUS.md`](progress/PROJECT_STATUS.md).
 

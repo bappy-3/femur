@@ -4,7 +4,6 @@ import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Logo } from "@/components/media/logo";
 import { MobileNav } from "@/components/navigation/mobile-nav";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button";
-import { env } from "@/config/env";
 import { mainNav, routes } from "@/config/site";
 import type { SiteSettings } from "@/types/cms";
 
@@ -26,7 +25,7 @@ export function SiteHeader({ announcement }: { announcement: SiteSettings["annou
             ))}
           </nav>
           <div className="flex items-center gap-1.5">
-            <ButtonAnchor href={env.niraUrl} variant="ghost" size="sm" className="hidden sm:inline-flex">
+            <ButtonAnchor href={routes.nira} variant="ghost" size="sm" className="hidden sm:inline-flex">
               <Sparkles className="size-4 text-sand-deep" /> Ask Nira
             </ButtonAnchor>
             <Link href={routes.account.root} aria-label="My account" className="hidden size-9 place-items-center rounded-full text-teal hover:bg-mist sm:grid">
@@ -35,7 +34,7 @@ export function SiteHeader({ announcement }: { announcement: SiteSettings["annou
             <ButtonLink href={routes.booking} size="sm" className="hidden sm:inline-flex">
               Book Appointment
             </ButtonLink>
-            <MobileNav items={mainNav} niraUrl={env.niraUrl} bookingHref={routes.booking} />
+            <MobileNav items={mainNav} niraUrl={routes.nira} bookingHref={routes.booking} />
           </div>
         </div>
       </header>

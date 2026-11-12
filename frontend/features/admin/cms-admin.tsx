@@ -37,7 +37,7 @@ export function CmsAdmin() {
       {tab === "Testimonials" && <TestimonialEditor />}
       {tab === "SEO" && <SeoEditor />}
       <p className="text-xs text-ink-soft">
-        Other pages (About, Our Story, Why Femur) and image uploads use the same section model and will be editable once the backend media + page APIs are connected.
+        Other pages (About, Our Story) and image uploads use the same section model and will be editable once the backend media + page APIs are connected.
       </p>
     </div>
   );
