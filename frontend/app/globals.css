@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Femur design tokens (CSS variables — colours mirror tailwind.config) */
+/* ------------------------------------------------------------------ */
+:root {
+  --color-sage: #6b9799;
+  --color-teal: #415f66;
+  --color-teal-deep: #2e464c;
+  --color-mint-soft: #d5e7df;
+  --color-cream: #f5f5f2;
+  --color-ink: #25383b;
+
+  --radius-card: 1rem;
+  --shadow-soft: 0 1px 2px rgb(37 56 59 / 0.04), 0 10px 30px -14px rgb(37 56 59 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(37 56 59 / 0.05), 0 22px 44px -20px rgb(37 56 59 / 0.28);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--color-mint-soft); color: var(--color-teal-deep); }
+  :focus-visible { outline: 2px solid var(--color-sage); outline-offset: 2px; border-radius: 6px; }
+  [hidden] { display: none !important; }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) { .container-page { padding-inline: 1.5rem; } }
+  @media (min-width: 1024px) { .container-page { padding-inline: 2rem; } }
+}
+
+@layer utilities {
+  /* Subtle paper grain for hero bands — pure CSS, no image request */
+  .bg-grain {
+    background-image: radial-gradient(rgb(37 56 59 / 0.045) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+  /* Calendar patterns */
+  .bg-offduty {
+    background-image: repeating-linear-gradient(135deg, rgb(37 56 59 / 0.045) 0 6px, transparent 6px 12px);
+  }
+  .bg-blocked {
+    background-image: repeating-linear-gradient(135deg, rgb(37 56 59 / 0.14) 0 4px, rgb(37 56 59 / 0.05) 4px 10px);
+  }
+}
+
+/* Scroll reveal — elements are visible if JS never runs (progressive enhancement) */
+.js-reveal [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js-reveal [data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .js-reveal [data-reveal] { opacity: 1; transform: none; }
+}
