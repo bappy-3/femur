@@ -40,7 +40,7 @@ export const homeFixture: HomeContent = {
       "Personalized physiotherapy and wellness care to help you move comfortably, recover confidently, and live healthier.",
     primaryCta: "Book an Appointment",
     secondaryCta: "Explore Our Services",
-    image: stock.heroClinic,
+    image: stock.heroExercise,
     secondaryImage: stock.exerciseMat,
   },
   highlights: [
