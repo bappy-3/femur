@@ -62,7 +62,7 @@ A mock-mode deployment is a **design preview only**: sample data, demo logins, n
 
 ## Connecting the domain (femurphysio.com)
 
-The site is domain-ready: canonical URL, `robots.txt`, `sitemap.xml`, social-share image and structured data are all generated from `NEXT_PUBLIC_SITE_URL`, and `www.femurphysio.com` redirects to the apex.
+The site is domain-ready: canonical URL, `robots.txt`, `sitemap.xml`, social-share image and structured data are all generated from `NEXT_PUBLIC_SITE_URL`, and the `www` ↔ apex redirect is configured in Vercel (Settings → Domains), not in app code, to avoid redirect loops.
 
 1. In Vercel: Project → **Settings → Domains** → add `femurphysio.com` and `www.femurphysio.com`.
 2. At your DNS provider, add the records Vercel shows. Typically:
@@ -81,3 +81,11 @@ The site is domain-ready: canonical URL, `robots.txt`, `sitemap.xml`, social-sha
 6. Check a share preview (WhatsApp/Facebook) and `https://femurphysio.com/robots.txt`.
 
 Until the backend exists the site runs on built-in data. Do not point real patients at it yet.
+
+### If the domain doesn't show the site (troubleshooting)
+
+1. **Vercel → Project → Settings → Domains.** Each domain must show **Valid Configuration**. If it says *Invalid Configuration*, Vercel tells you the exact DNS records needed.
+2. **Pick ONE DNS home.** Either keep Hostinger's nameservers and add Vercel's records there (A `@` → `76.76.21.21`, CNAME `www` → `cname.vercel-dns.com`), **or** switch the domain to Vercel's nameservers (`ns1.vercel-dns.com`, `ns2.vercel-dns.com`) and manage records in Vercel. Mixing both, or leaving old Hostinger A/AAAA/parking records next to the Vercel ones, breaks it. Delete any other `A`, `AAAA` or `CNAME` records for `@` and `www`.
+3. **Only one redirect.** In Vercel Domains, set one of `www` / apex as primary and let the other redirect to it. Do not add a second redirect in code or in Hostinger (the app has none). Disable Hostinger's "force HTTPS"/domain-forwarding while Vercel manages the domain.
+4. **Domain is on the right project and the latest Production deployment is "Ready"** (project Root Directory = `frontend`).
+5. DNS can take minutes to hours. Check with `dig femurphysio.com +short` (expect `76.76.21.21`) and `dig www.femurphysio.com +short`.

@@ -25,12 +25,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
-  async redirects() {
-    return [
-      // Canonical host: send www to the apex domain (no-op until the domain is connected)
-      { source: "/:path*", has: [{ type: "host", value: "www.femurphysio.com" }], destination: "https://femurphysio.com/:path*", permanent: true },
-    ];
-  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
