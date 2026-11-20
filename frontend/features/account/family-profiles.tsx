@@ -49,7 +49,7 @@ export function FamilyProfiles() {
         <div className="grid gap-3 sm:grid-cols-2">
           {(data ?? []).map((p) => (
             <article key={p.id} className="flex items-center gap-4 rounded-2xl border border-line bg-white p-4">
-              <Monogram name={p.fullName} color={p.gender === "FEMALE" ? "#B98657" : "#415F66"} className="size-11 text-sm" />
+              <Monogram name={p.fullName} color={p.gender === "FEMALE" ? "#5E9B2B" : "#1B7452"} className="size-11 text-sm" />
               <div className="min-w-0 flex-1">
                 <p className="truncate font-semibold text-ink">{p.fullName}</p>
                 <p className="text-xs text-ink-soft">

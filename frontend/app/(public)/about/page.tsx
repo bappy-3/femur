@@ -28,7 +28,7 @@ export default async function AboutPage() {
   const [about, why] = await Promise.all([api.cms.getAbout(), api.cms.getWhyFemur()]);
   return (
     <>
-      <PageHero image={brandImagery.about} eyebrow="About Femur" title={<>Physiotherapy-led care, <em className="text-sage italic">built around people</em></>} intro={about.intro} />
+      <PageHero image={brandImagery.about} eyebrow="About Femur" title={<>Physiotherapy-led care, <em className="not-italic">built around people</em></>} intro={about.intro} />
 
       <Section>
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">

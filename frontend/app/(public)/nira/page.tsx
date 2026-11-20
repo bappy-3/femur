@@ -28,7 +28,7 @@ export default async function NiraGatePage() {
         eyebrow="Members only"
         title={
           <>
-            Meet <em className="text-mint italic">Nira</em>
+            Meet <em className="not-italic">Nira</em>
           </>
         }
         intro="Nira is Femur's AI Consultant, exclusively for members — guidance on physiotherapy, exercise and recovery between your visits."

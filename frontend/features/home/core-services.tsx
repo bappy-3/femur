@@ -15,7 +15,7 @@ export function CoreServices({ services }: { services: Service[] }) {
           eyebrow="Physiotherapy services"
           title={
             <>
-              Rehabilitation is what <em className="text-sage italic">we do best</em>
+              Rehabilitation is what <em className="not-italic">we do best</em>
             </>
           }
           intro="Assessment-led physiotherapy for pain, injury, surgery recovery and long-term conditions — delivered by male and female physiotherapists."

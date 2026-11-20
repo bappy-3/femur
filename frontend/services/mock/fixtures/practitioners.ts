@@ -42,7 +42,7 @@ export const practitionerFixtures: Practitioner[] = [
     availabilitySummary: "Saturday – Thursday · morning & evening",
     isVisiting: false,
     sessionMinutes: 45,
-    color: "#415F66",
+    color: "#1B7452",
     rules: [
       { id: "r1", kind: "WEEKLY", weekdays: [6, 0, 1, 2, 3, 4], start: "09:00", end: "20:00", breaks: [{ start: "13:00", end: "15:00" }], effectiveFrom: "2026-01-01", effectiveTo: null },
     ],

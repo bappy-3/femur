@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn";
 import { initials } from "@/lib/strings";
 
 /** Initials avatar — used until a real, consented practitioner photo is uploaded. */
-export function Monogram({ name, color = "#415F66", className }: { name: string; color?: string; className?: string }) {
+export function Monogram({ name, color = "#1B7452", className }: { name: string; color?: string; className?: string }) {
   return (
     <span
       aria-hidden
