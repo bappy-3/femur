@@ -12,23 +12,24 @@ interface Props {
   image?: string;
 }
 
-/** Inner-page hero: photographic when an image is given, otherwise a quiet typographic band. */
+/** Inner-page hero: pale-green clinical band; an optional photo sits in an arched frame on the right. */
 export function PageHero({ eyebrow, title, intro, children, className, image }: Props) {
   return (
-    <section className={cn("relative isolate overflow-hidden border-b border-line", image ? "bg-teal-deep" : "bg-mist/70", className)}>
-      {image ? (
-        <>
-          <Image src={image} alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
-          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-teal-deep/85 via-teal-deep/65 to-teal-deep/40" />
-        </>
-      ) : (
-        <MotionArc className="pointer-events-none absolute -right-24 -bottom-24 w-[34rem] text-sage/25 sm:-right-10" />
-      )}
-      <div className="container-page relative py-20 sm:py-28">
-        <p className={cn("mb-4 text-xs font-semibold tracking-[0.18em] uppercase", image ? "text-mint" : "text-sage")}>{eyebrow}</p>
-        <h1 className={cn("max-w-3xl animate-fade-up text-[2.4rem] leading-[1.04] font-medium sm:text-[3.4rem]", image ? "text-white [&_em]:!text-mint" : "text-teal-deep")}>{title}</h1>
-        {intro && <p className={cn("mt-5 max-w-2xl animate-fade-up text-lg leading-relaxed [animation-delay:80ms]", image ? "text-white/85" : "text-ink-soft")}>{intro}</p>}
-        {children && <div className="mt-8 animate-fade-up [animation-delay:140ms]">{children}</div>}
+    <section className={cn("relative isolate overflow-hidden border-b border-line bg-mist", className)}>
+      <div aria-hidden className="absolute -top-32 -right-32 -z-10 size-[30rem] rounded-full bg-mint-soft/80" />
+      {!image && <MotionArc className="pointer-events-none absolute -right-24 -bottom-24 -z-10 w-[34rem] text-sage/30 sm:-right-10" />}
+      <div className={cn("container-page relative grid items-center gap-10 py-16 sm:py-24", image && "lg:grid-cols-[1.3fr_1fr]")}>
+        <div>
+          <p className="mb-4 text-sm font-semibold text-sage">{eyebrow}</p>
+          <h1 className="max-w-3xl animate-fade-up text-[2.4rem] leading-[1.04] font-semibold text-teal-deep sm:text-[3.4rem]">{title}</h1>
+          {intro && <p className="mt-5 max-w-2xl animate-fade-up text-lg leading-relaxed text-ink-soft [animation-delay:80ms]">{intro}</p>}
+          {children && <div className="mt-8 animate-fade-up [animation-delay:140ms]">{children}</div>}
+        </div>
+        {image && (
+          <div className="relative hidden aspect-[4/3.4] animate-fade-up overflow-hidden rounded-t-[999px] rounded-b-3xl bg-mint-soft shadow-lift [animation-delay:100ms] lg:block">
+            <Image src={image} alt="" fill priority sizes="30vw" className="object-cover" />
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,19 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import { env } from "@/config/env";
 import { RevealObserver } from "@/components/media/reveal-observer";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  axes: ["opsz", "SOFT"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const manrope = Manrope({
+const body = Figtree({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -32,14 +31,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#415F66",
+  themeColor: "#1B7452",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="min-h-dvh">
         {children}
         <RevealObserver />

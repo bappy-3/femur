@@ -15,7 +15,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </Link>
           <div className="max-w-md">
             <p className="font-display text-4xl leading-tight font-medium">
-              Move better. <em className="text-mint italic">Live better.</em>
+              Move better. <em className="not-italic">Live better.</em>
             </p>
             <p className="mt-4 text-white/70">One account to book appointments, manage family members, track your care and — with membership — talk to Nira.</p>
           </div>

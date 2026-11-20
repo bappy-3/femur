@@ -21,7 +21,7 @@ export default async function ServicesPage() {
         eyebrow="Our services"
         title={
           <>
-            Physiotherapy at the core, <em className="text-sage italic">wellness</em> around it
+            Physiotherapy at the core, <em className="not-italic">wellness</em> around it
           </>
         }
         intro="Every physiotherapy programme starts with an assessment and a plan you understand. Visiting consultants add nutrition, medical, eye and dental care on scheduled days."

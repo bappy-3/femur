@@ -159,7 +159,7 @@ export function DayGrid({ data, date, showCancelled, onSelect, onCreateAt, onMov
                 aria-hidden
                 className="pointer-events-none absolute inset-0"
                 style={{
-                  backgroundImage: `linear-gradient(to bottom, rgb(37 56 59 / 0.09) 1px, transparent 1px), linear-gradient(to bottom, rgb(37 56 59 / 0.035) 1px, transparent 1px)`,
+                  backgroundImage: `linear-gradient(to bottom, rgb(18 48 42 / 0.09) 1px, transparent 1px), linear-gradient(to bottom, rgb(18 48 42 / 0.035) 1px, transparent 1px)`,
                   backgroundSize: `100% ${ROW_PX * 4}px, 100% ${ROW_PX}px`,
                 }}
               />

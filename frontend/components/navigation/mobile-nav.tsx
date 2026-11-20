@@ -39,20 +39,25 @@ export function MobileNav({ items, niraUrl, bookingHref }: { items: readonly Nav
       <div
         id="mobile-menu"
         className={cn(
-          "absolute inset-x-0 top-full z-40 h-[calc(100dvh-4.25rem)] origin-top overflow-y-auto border-t border-line bg-cream px-4 pt-4 pb-10 transition-[opacity,transform] duration-200",
+          "absolute inset-x-0 top-full z-40 h-[calc(100dvh-4.25rem)] origin-top overflow-y-auto border-t border-line bg-white px-4 pt-4 pb-10 transition-[opacity,transform] duration-200",
           open ? "opacity-100" : "pointer-events-none -translate-y-2 opacity-0",
         )}
       >
         <nav aria-label="Mobile" className="flex flex-col">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn("border-b border-line py-4 font-display text-2xl text-teal-deep", pathname.startsWith(item.href) && "text-sage")}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {items.map((item) => {
+            const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={cn("flex items-center justify-between border-b border-line py-4 font-display text-2xl", active ? "text-teal" : "text-teal-deep")}
+              >
+                {item.label}
+                {active && <span aria-hidden className="size-2.5 rounded-full bg-teal" />}
+              </Link>
+            );
+          })}
           <Link href="/account" className="border-b border-line py-4 font-display text-2xl text-teal-deep">
             My account
           </Link>
