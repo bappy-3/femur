@@ -7,7 +7,7 @@ import { PractitionerCard } from "@/features/practitioners/practitioner-card";
 import type { Practitioner } from "@/types/practitioner";
 
 export function SpecialistsPreview({ practitioners }: { practitioners: Practitioner[] }) {
-  const physios = practitioners.filter((p) => !p.isVisiting).slice(0, 4);
+  const physios = practitioners.filter((p) => !p.isVisiting).sort((a, b) => Number(b.gender === "FEMALE") - Number(a.gender === "FEMALE")).slice(0, 4);
   return (
     <Section>
       <div className="container-page">
@@ -15,7 +15,7 @@ export function SpecialistsPreview({ practitioners }: { practitioners: Practitio
           index="04"
           eyebrow="Meet our specialists"
           title="The people behind your recovery"
-          intro="Male and female physiotherapists, supported by visiting consultants on scheduled days."
+          intro="Our female physiotherapists lead all maternal care, supported by physiotherapists and visiting consultants."
           action={
             <ButtonLink href={routes.specialists} variant="secondary">
               Meet the team <ArrowRight className="size-4" />

@@ -6,7 +6,7 @@ import type { Highlight } from "@/types/cms";
 
 export function BookingSteps({ steps }: { steps: Highlight[] }) {
   return (
-    <Section tone="mist">
+    <Section tone="white">
       <div className="container-page">
         <SectionHeading index="05" eyebrow="How booking works" title="From pain to plan in four simple steps" align="center" />
         <ol className="relative grid gap-6 md:grid-cols-4">

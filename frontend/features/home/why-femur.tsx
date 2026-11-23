@@ -10,8 +10,7 @@ export function WhyFemurSection({ content }: { content: HomeContent["whyFemur"] 
       <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start" data-reveal>
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-sage uppercase">
-            <span className="font-display text-sm tracking-normal text-sand-deep">02</span>
-            <span aria-hidden className="h-px w-8 bg-sage/40" /> Why choose Femur
+            Why choose Femur
           </p>
           <h2 className="text-[2rem] leading-[1.08] font-medium text-teal-deep sm:text-[2.6rem]">{content.title}</h2>
           <p className="mt-4 text-[1.05rem] leading-relaxed text-ink-soft">{content.intro}</p>

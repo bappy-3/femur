@@ -32,3 +32,11 @@ Legend: ✅ done · 🟡 partial · ⏳ todo · ❓ blocked on business decision
 | 26 | Replace stand-in staff photos/names/prices/contact/story with real data | P0 | ❓ awaiting Femur |
 | 27 | Confirm what Nira is | P1 | ✅ AI Consultant, members only |
 | 28 | Connect femurphysio.com in Vercel + DNS | P0 | ⏳ needs domain access |
+| 29 | Conditions, treatments, blog, home-visit pages + homepage sections | P1 | ✅ built 2026-11-23 |
+| 30 | Clinical review of all new medical copy and Bangla text | P0 | ❓ awaiting Femur clinician |
+| 31 | Confirm which treatments and home visits Femur offers | P0 | ❓ awaiting Femur |
+| 32 | Full Bangla translation with `/bn` routing | P2 | ⏳ |
+| 33 | Move conditions/treatments/articles into the admin CMS | P2 | ⏳ needs backend |
+| 34 | Maternal-first repositioning (services, hub page, content, cleaner UI) | P0 | ✅ built 2026-11-23 |
+| 35 | Obstetric + women's-health clinical review of all maternal copy | P0 | ❓ awaiting Femur clinicians |
+| 36 | Real maternal photography (with consent), real testimonials, real maternal prices | P0 | ❓ awaiting Femur |

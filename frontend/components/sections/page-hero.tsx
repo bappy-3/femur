@@ -17,12 +17,11 @@ export function PageHero({ eyebrow, title, intro, children, className, image }: 
   return (
     <section className={cn("relative isolate overflow-hidden border-b border-line bg-mist", className)}>
       <div aria-hidden className="absolute -top-32 -right-32 -z-10 size-[30rem] rounded-full bg-mint-soft/80" />
-      {!image && <MotionArc className="pointer-events-none absolute -right-24 -bottom-24 -z-10 w-[34rem] text-sage/30 sm:-right-10" />}
-      <div className={cn("container-page relative grid items-center gap-10 py-16 sm:py-24", image && "lg:grid-cols-[1.3fr_1fr]")}>
+      <div className={cn("container-page relative grid items-center gap-10 py-12 sm:py-20", image && "lg:grid-cols-[1.3fr_1fr]")}>
         <div>
           <p className="mb-4 text-sm font-semibold text-sage">{eyebrow}</p>
-          <h1 className="max-w-3xl animate-fade-up text-[2.4rem] leading-[1.04] font-semibold text-teal-deep sm:text-[3.4rem]">{title}</h1>
-          {intro && <p className="mt-5 max-w-2xl animate-fade-up text-lg leading-relaxed text-ink-soft [animation-delay:80ms]">{intro}</p>}
+          <h1 className="max-w-3xl animate-fade-up text-[2.5rem] leading-[1.06] font-semibold text-teal-deep sm:text-[3.5rem]">{title}</h1>
+          {intro && <p className="mt-5 max-w-2xl animate-fade-up text-[1.2rem] leading-relaxed text-ink-soft [animation-delay:80ms]">{intro}</p>}
           {children && <div className="mt-8 animate-fade-up [animation-delay:140ms]">{children}</div>}
         </div>
         {image && (

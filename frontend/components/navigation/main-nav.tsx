@@ -13,7 +13,7 @@ interface NavItem {
 export function MainNav({ items }: { items: readonly NavItem[] }) {
   const pathname = usePathname();
   return (
-    <nav aria-label="Main" className="hidden items-center gap-0.5 lg:flex">
+    <nav aria-label="Main" className="hidden items-center gap-0.5 xl:flex">
       {items.map((item) => {
         const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
         return (
@@ -22,7 +22,7 @@ export function MainNav({ items }: { items: readonly NavItem[] }) {
             href={item.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "relative rounded-full px-3.5 py-2 text-[0.9rem] font-medium whitespace-nowrap transition-colors",
+              "relative rounded-full px-2.5 py-2 text-[0.9rem] font-medium whitespace-nowrap transition-colors",
               active ? "bg-mint-soft text-teal-deep" : "text-ink-soft hover:bg-mist hover:text-teal-deep",
             )}
           >

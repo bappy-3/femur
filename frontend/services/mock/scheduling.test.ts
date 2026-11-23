@@ -72,6 +72,16 @@ describe("gender policy", () => {
     expect(candidatePractitioners(svc("pregnancy-rehabilitation"), "FEMALE", practitionerFixtures).every((p) => p.gender === "FEMALE")).toBe(true);
   });
 
+  it.each(["preconception-care", "pregnancy-rehabilitation", "postnatal-recovery", "pelvic-floor-therapy"])(
+    "maternal service %s: women are matched with female physiotherapists only; men cannot book it",
+    (slug) => {
+      expect(candidatePractitioners(svc(slug), "MALE", practitionerFixtures)).toEqual([]);
+      const forWomen = candidatePractitioners(svc(slug), "FEMALE", practitionerFixtures);
+      expect(forWomen.length).toBeGreaterThan(0);
+      expect(forWomen.every((p) => p.gender === "FEMALE")).toBe(true);
+    },
+  );
+
   it("consultancy with policy NONE is open to any patient gender", () => {
     expect(candidatePractitioners(svc("dental-consultancy"), "FEMALE", practitionerFixtures).map((p) => p.id)).toEqual(["prc_dental"]);
   });

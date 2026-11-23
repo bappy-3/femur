@@ -65,3 +65,28 @@
 
 ### ADR-016 — Photographic page chrome and domain readiness
 **Decision:** page heroes, CTA bands and panels use photography (via `config/brand.ts`) rather than flat colour blocks. SEO and social files (`robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, canonical metadata, JSON-LD) are generated from `NEXT_PUBLIC_SITE_URL`, and `www` redirects to the apex domain.
+
+### ADR-017: Content library as typed TypeScript modules
+**Decision:** conditions, treatments and articles live in `frontend/content/*.ts` with shared types in `types/content.ts`, rendered as static pages. They are *not* routed through the mock `api` adapter.
+**Why:** the content is editorial, changes rarely, benefits from SSG and needs no backend. Types make later migration to the CMS API a one-line change per page.
+**Trade-off:** edits need a code change until the admin CMS covers these types.
+
+### ADR-018: Bilingual by secondary line, not by locale routing (for now)
+**Decision:** English is primary. Bangla appears as a secondary line (names, summaries, a summary box per condition, hero tagline) using `<Bn lang="bn">` and Noto Sans Bengali.
+**Why:** delivers a visible, correct Bangla presence quickly without duplicating every page or breaking ISR/static caching (a cookie-based toggle would make pages dynamic).
+**Follow-up:** full translation needs `/bn` locale routing and translated bodies, FAQs and articles.
+
+### ADR-019: Competitor research informs topics, never copy
+**Decision:** competitor pages are used to find topics and page types. No text, images, branding, names or contact details are reused; unverified medical claims are not repeated. All medical copy is hedged, includes red-flag guidance and requires clinician sign-off.
+**Why:** copyright and SEO duplicate-content risk, patient safety, and brand integrity.
+
+### ADR-020: Maternal care is Femur's primary positioning
+**Decision:** Femur is presented first and foremost as a women's and maternal physiotherapy clinic serving women before, during and after pregnancy. The homepage hero, navigation (*Maternal Care* is the first item), service ordering, conditions, articles, testimonials and FAQ lead with maternal content; general musculoskeletal care follows.
+**Implementation:** three stages (pre-pregnancy, pregnancy, postnatal) plus pelvic floor therapy become four bookable services (`eligibleGenders: [FEMALE]`, required same-gender), and a `/maternal-care` hub page. The slug `pregnancy-rehabilitation` was kept (renamed *Pregnancy Physiotherapy*) so existing links, tests and seed data stay valid.
+**Why:** the clinic's primary target is mothers-to-be and new mothers; the competitor review showed general pain pages alone do not differentiate.
+**Safety:** every maternal page carries red-flag guidance and defers to the patient's doctor or midwife; copy requires clinical review before launch.
+
+### ADR-021: Cleaner, shorter UI
+**Decision:** reduce visual noise: a 10-section homepage (from 17), no numbered section eyebrows, no decorative arcs on inner-page heroes, smaller section padding, one clear call to action per block.
+**Follow-up (same day):** at the clinic's request, text was enlarged (17px root) and the *other* services were given a highlighted, image-led homepage section plus an "Also:" row in the hero, so the maternal focus does not hide general physiotherapy and consultancy.
+**Why:** the earlier content expansion made the homepage long; the maternal audience benefits from a calm, uncluttered, reassuring layout. Detailed content stays one click away on its own pages.

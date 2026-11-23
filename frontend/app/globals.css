@@ -27,6 +27,8 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    /* 17px root (was 16px): every rem-based size scales up ~6% for easier reading */
+    font-size: 106.25%;
   }
   body {
     background: var(--color-cream);
@@ -34,6 +36,7 @@
     font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    line-height: 1.65;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display), ui-serif, Georgia, serif;

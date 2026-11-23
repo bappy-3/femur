@@ -17,6 +17,21 @@
 - **Prices, testimonials, phone/WhatsApp/address/email, and the clinic story** are stand-ins and must be replaced with real, approved content.
 - **The site runs on built-in data**, so bookings, the contact form and logins don't reach the clinic. Don't direct real patients to it until the backend is connected.
 
+## Content expansion (2026-11-23): review before launch
+- **All new medical copy is a draft written by Claude** (conditions, treatments, articles, Bangla text). A licensed Femur clinician must review it. See the checklist in [`docs/content/CONTENT_GUIDE.md`](../docs/content/CONTENT_GUIDE.md) §5.
+- **Maternal copy needs obstetric and women's-health review** (pregnancy exercise advice, postnatal timing such as "around six weeks", C-section guidance, red-flag lists, FAQ). It is general information and must not be published as clinical advice without sign-off.
+- **Maternal service prices are sample values** (like all prices) and must be set by Femur.
+- **Only two female physiotherapists** are linked to the maternal services in the sample data; real staffing and availability must be configured.
+- **Testimonials are stand-in text** written for the maternal focus (`cms.ts`); replace with real, consented patient stories. Do not publish invented testimonials as genuine.
+- **Stock photography of strangers** (newborns, families, pregnancy) is placeholder until Femur supplies its own photos with consent.
+- **Treatments Femur may not offer:** shockwave, PEMF, cryotherapy, rTMS and ozone are tagged *Confirmed at booking*. rTMS and ozone require qualified medical clinicians. Remove any that Femur does not provide.
+- **Home physiotherapy** is a request page only. Coverage areas and fees are not defined, and in mock mode the form falls back to *call or WhatsApp*. Delete the page if the service is not offered.
+- **Bangla is partial** (secondary lines only). Full translation needs locale routing. Bangla wording needs a native-speaker review.
+- **WhatsApp button** uses the stand-in number from `cms.ts`; it will message a wrong number until replaced.
+- **Blog author** is shown as *Femur clinical team* with no named reviewer; add one when real reviewers exist.
+- **Content is not editable in the admin CMS yet** (static TypeScript modules, ADR-017).
+- **Desktop nav starts at 1280px.** Between 1024 and 1279px the hamburger menu is used.
+
 ## Other stand-ins
 - Photography is Unsplash stock (page chrome, services, staff portraits) until Femur supplies its own.
 - Demo login buttons are hidden unless `NEXT_PUBLIC_SHOW_DEMO_LOGIN=true`.

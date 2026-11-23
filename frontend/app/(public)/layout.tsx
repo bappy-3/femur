@@ -1,3 +1,4 @@
+import { QuickContact } from "@/components/layout/quick-contact";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { api } from "@/services";
@@ -12,6 +13,7 @@ export default async function PublicLayout({ children }: { children: React.React
       <SiteHeader announcement={settings.announcement} />
       <main id="main">{children}</main>
       <SiteFooter settings={settings} />
+      <QuickContact contact={settings.contact} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 # Project Status
 
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Current stage:** Phase 1 complete · Phase 3–6 **frontend** complete against mock data · Backend not started
 
 ## Completed
@@ -20,6 +20,14 @@ These items work end to end **on mock data**. Real persistence needs the backend
 - [x] Foundation: Next.js 15 / React 19 / TS strict / Tailwind 3.4, design tokens, fonts, folder architecture, data-access adapter layer (live + mock), middleware gate, security headers
 - [x] Design system: buttons, cards, badges, forms, alerts, skeletons, empty states, dialog/drawer, toasts, status badges, placeholder & demo markers, logo
 - [x] Public website: Home (13 sections), Services, Service detail ×13, Specialists, Pricing, Membership, About (with Why Femur), Our Story, Become a Member, Nira members-only gateway, FAQ (with JSON-LD), Contact (form + map), 404
+- [x] **Content expansion (2026-11-23)**, see [`docs/content/CONTENT_GUIDE.md`](../docs/content/CONTENT_GUIDE.md):
+  - Conditions library (10 pain areas, bilingual secondary line, red-flag lists, FAQs);
+  - Treatments library (7: manual, shockwave, PEMF, acupuncture, cryotherapy, rTMS, ozone);
+  - Health blog (6 original articles) and home physiotherapy page;
+  - 4 new homepage sections, floating WhatsApp/call button, new nav and footer links;
+  - Bangla secondary language via `<Bn>` + Noto Sans Bengali; sitemap and JSON-LD updated.
+  - Drafted by Claude, **needs clinical sign-off before launch**.
+- [x] **Maternal-first repositioning (2026-11-23)**: 4 maternal services (pre-pregnancy, pregnancy, postnatal, pelvic floor), `/maternal-care` hub, 5 maternal conditions, 4 maternal articles, shorter homepage and cleaner UI. See ADR-020/021 and [`docs/content/CONTENT_GUIDE.md`](../docs/content/CONTENT_GUIDE.md). Needs obstetric and women's-health clinical review.
 - [x] Booking wizard: 7 steps, gender-policy aware, real-time availability via API contract, slot-taken recovery, idempotency key, confirmation with reference + .ics download, honest notification status
 - [x] Auth UI: login, register, forgot password (zod validation, BD phone normalisation), demo sessions in mock mode
 - [x] Patient portal: overview, appointments (cancel/reschedule within policy), membership (status distinctions + purchase request), family profiles, payments, profile
@@ -33,7 +41,7 @@ These items work end to end **on mock data**. Real persistence needs the backend
   - pricing, plans and members;
   - CMS (contact/hours, homepage, announcement, FAQs, testimonials, SEO);
   - finance (revenue, payment verification, commissions with override/settle/export, integrations status)
-- [x] Unit tests: 46 passing (scheduling, commissions, booking state, calendar layout, date/money, validation, CSV)
+- [x] Unit tests: 50 passing (scheduling, commissions, booking state, calendar layout, date/money, validation, CSV)
 - [x] `npm run build`, `lint` and `typecheck` all pass
 
 ## In progress
