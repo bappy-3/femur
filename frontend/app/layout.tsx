@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Bricolage_Grotesque, Figtree, Noto_Sans_Bengali } from "next/font/google";
 import { env } from "@/config/env";
 import { RevealObserver } from "@/components/media/reveal-observer";
 import "./globals.css";
@@ -16,6 +16,13 @@ const body = Figtree({
   display: "swap",
 });
 
+/** Bangla secondary-language text (loaded only for the Bengali glyph range). */
+const bangla = Noto_Sans_Bengali({
+  subsets: ["bengali"],
+  variable: "--font-bn",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
   title: {
@@ -23,9 +30,9 @@ export const metadata: Metadata = {
     template: "%s · Femur",
   },
   description:
-    "Personalised physiotherapy, rehabilitation and wellness consultancy in Uttara, Dhaka. Book an appointment online in minutes.",
+    "Women's and maternal physiotherapy in Uttara, Dhaka: care before, during and after pregnancy with female physiotherapists. Book online in minutes.",
   alternates: { canonical: "/" },
-  keywords: ["physiotherapy Uttara", "physiotherapist Dhaka", "pain management", "rehabilitation", "sports injury", "pregnancy physiotherapy"],
+  keywords: ["pregnancy physiotherapy Dhaka", "postnatal physiotherapy", "pelvic floor therapy", "prenatal back pain", "C-section recovery", "female physiotherapist Uttara", "physiotherapy Uttara"],
   openGraph: { type: "website", locale: "en_BD", siteName: "Femur Physiotherapy & Wellness Center", url: "/" },
   twitter: { card: "summary_large_image" },
 };
@@ -38,7 +45,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${bangla.variable}`}>
       <body className="min-h-dvh">
         {children}
         <RevealObserver />

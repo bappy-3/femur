@@ -1,10 +1,13 @@
-import { Activity, Apple, Baby, Bandage, Bone, Brain, Dumbbell, Eye, Footprints, HandHeart, PersonStanding, Smile, Stethoscope, type LucideIcon } from "lucide-react";
+import { Activity, Apple, Baby, Bandage, Bone, Brain, Dumbbell, Eye, Flower2, Footprints, HandHeart, HeartHandshake, PersonStanding, Smile, Sprout, Stethoscope, type LucideIcon } from "lucide-react";
 import type { ServiceIconKey } from "@/types/catalog";
 
 const ICONS: Record<ServiceIconKey, LucideIcon> = {
   activity: Activity,
   pain: HandHeart,
   pregnancy: Baby,
+  preconception: Sprout,
+  postnatal: HeartHandshake,
+  pelvic: Flower2,
   sports: Footprints,
   bone: Bone,
   brain: Brain,

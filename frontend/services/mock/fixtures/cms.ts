@@ -7,7 +7,7 @@ import { stock } from "./images";
  */
 export const settingsFixture: SiteSettings = {
   clinicName: "Femur Physiotherapy & Wellness Center",
-  tagline: "Physiotherapy & Wellness · Uttara, Dhaka",
+  tagline: "Women's & maternal physiotherapy · Uttara, Dhaka",
   contact: {
     addressLines: ["House 12, Road 7, Sector 4", "Uttara, Dhaka 1230", "Bangladesh"],
     phone: "+880 1712-345678",
@@ -25,8 +25,8 @@ export const settingsFixture: SiteSettings = {
   ],
   announcement: {
     id: "ann_1",
-    message: "Visiting specialist days for Eye Care and Dental are now bookable online.",
-    href: "/services",
+    message: "Pre-pregnancy, pregnancy and postnatal physiotherapy with female physiotherapists. Book online.",
+    href: "/maternal-care",
     isPublished: true,
   },
   placeholders: [],
@@ -35,13 +35,13 @@ export const settingsFixture: SiteSettings = {
 export const homeFixture: HomeContent = {
   hero: {
     eyebrow: "",
-    headline: "Live Better.",
+    headline: "Care for every stage of motherhood.",
     subheadline:
-      "Personalized physiotherapy and wellness care to help you move comfortably, recover confidently, and live healthier.",
+      "Gentle, expert physiotherapy before you conceive, while you are pregnant and after your baby arrives, with female physiotherapists in a private, caring clinic.",
     primaryCta: "Book an Appointment",
-    secondaryCta: "Explore Our Services",
-    image: stock.heroExercise,
-    secondaryImage: stock.exerciseMat,
+    secondaryCta: "Explore Maternal Care",
+    image: stock.pregnancy,
+    secondaryImage: stock.babyFeet,
   },
   highlights: [
     { title: "Physiotherapy first", description: "Rehabilitation is our core — every plan starts with a proper assessment." },
@@ -50,13 +50,13 @@ export const homeFixture: HomeContent = {
     { title: "Visiting specialists", description: "Nutrition, general medicine, eye and dental consultancy on set days." },
   ],
   whyFemur: {
-    title: "Care that is planned around you",
-    intro: "We combine careful assessment, hands-on treatment and clear communication so you always know what comes next.",
+    title: "Care designed around women and mothers",
+    intro: "Pregnancy and early motherhood are demanding. We make care comfortable, private and clear at every step.",
     points: [
-      { title: "Personalised treatment plans", description: "Your plan is built from your assessment, goals and daily life — and adjusted as you improve." },
-      { title: "Patient-focused rehabilitation", description: "We explain the why behind every exercise so you can take an active part in recovery." },
-      { title: "Respectful, comfortable care", description: "Same-gender physiotherapists and a calm, private treatment environment." },
-      { title: "Integrated wellness", description: "Nutrition and medical consultancy under one roof when your recovery needs it." },
+      { title: "Female physiotherapists", description: "All maternal care is delivered by female physiotherapists, in private treatment rooms." },
+      { title: "Stage-by-stage plans", description: "Care adapts to pre-pregnancy, each trimester and postnatal recovery, and is reviewed as you progress." },
+      { title: "Works with your care team", description: "We share advice with your doctor or midwife and tell you clearly when to check in with them." },
+      { title: "Made for real life", description: "Short home exercises, flexible booking, and space for your baby at postnatal visits." },
     ],
   },
   approach: {
@@ -71,7 +71,7 @@ export const homeFixture: HomeContent = {
     image: stock.consultation,
   },
   bookingSteps: [
-    { title: "Choose a service", description: "Physiotherapy, rehabilitation or a consultancy visit." },
+    { title: "Choose your stage", description: "Pre-pregnancy, pregnancy, postnatal or another service." },
     { title: "Tell us who it's for", description: "Book for yourself or a family member in under a minute." },
     { title: "Pick a time", description: "Only genuinely available slots are shown." },
     { title: "Get confirmation", description: "Receive your appointment reference instantly." },
@@ -84,7 +84,7 @@ export const homeFixture: HomeContent = {
 
 export const aboutFixture: AboutContent = {
   intro:
-    "Femur Physiotherapy & Wellness Center is a physiotherapy and rehabilitation clinic in Uttara, Dhaka, with visiting consultants for nutrition, general medicine, eye care and dental care.",
+    "Femur Physiotherapy & Wellness Center is a women's and maternal physiotherapy clinic in Uttara, Dhaka, caring for women before, during and after pregnancy as well as general rehabilitation, with visiting consultants for nutrition, general medicine, eye care and dental care.",
   story: {
     key: "story",
     title: "Our story",
@@ -142,17 +142,19 @@ export const faqFixtures: Faq[] = [
   { id: "faq_6", category: "Booking", question: "How do I cancel or reschedule?", answer: "Registered users can cancel or reschedule from My Account, subject to the cancellation window for the service. You can also call the clinic.", isPublished: true, sortOrder: 6 },
   { id: "faq_7", category: "Membership", question: "Do I need a membership to book?", answer: "No. Anyone can book appointments, and registering a free account is optional. Membership adds benefits such as access to Nira, our AI Consultant.", isPublished: true, sortOrder: 7 },
   { id: "faq_8", category: "Membership", question: "What is Nira?", answer: "Nira is Femur's AI Consultant, available to active members only. You'll be asked to log in and your membership is checked before you can use it. It offers general guidance and does not replace your treating clinician.", isPublished: true, sortOrder: 8 },
+  { id: "faq_10", category: "Treatment", question: "Is physiotherapy safe during pregnancy?", answer: "Yes, when delivered by a physiotherapist trained in women's health and adapted to your stage of pregnancy. We work alongside your doctor or midwife and tell you which activities to avoid.", isPublished: true, sortOrder: 0 },
+  { id: "faq_11", category: "Treatment", question: "When can I start after giving birth?", answer: "Gentle breathing and walking can usually begin early. We start structured treatment when your doctor has cleared you, commonly around six weeks, or earlier for specific problems after discussing it with them.", isPublished: true, sortOrder: 0 },
   { id: "faq_9", category: "Payments", question: "How can I pay?", answer: "Payment at the clinic is always available. Online payment options such as bKash and Nagad will be listed here once they are enabled.", isPublished: true, sortOrder: 9 },
 ];
 
 export const testimonialFixtures: Testimonial[] = [
-  { id: "t_1", authorDisplay: "Rafiq A.", context: "Lower back pain", quote: "The plan was explained clearly and the exercises fit into my workday. My back pain eased within a few weeks and I finally understood why it kept coming back.", isPublished: true, isSample: false },
-  { id: "t_2", authorDisplay: "Sharmin H.", context: "Post-operative knee rehabilitation", quote: "After my knee surgery I always knew what the next step was, which made the recovery far less stressful. Every session had a clear goal.", isPublished: true, isSample: false },
-  { id: "t_3", authorDisplay: "Tasnim R.", context: "Pregnancy rehabilitation", quote: "Being treated by a female physiotherapist made me feel completely comfortable throughout my pregnancy. The exercises were gentle and easy to continue at home.", isPublished: true, isSample: false },
+  { id: "t_1", authorDisplay: "Tasnim R.", context: "Back pain in pregnancy", quote: "Being treated by a female physiotherapist made me feel completely comfortable. The exercises were gentle, easy to continue at home, and my back pain eased well before my due date.", isPublished: true, isSample: false },
+  { id: "t_2", authorDisplay: "Nusrat K.", context: "Postnatal recovery after a C-section", quote: "Nobody had told me how to move after my C-section. Every session had a clear goal, and I could bring my baby along, which made all the difference.", isPublished: true, isSample: false },
+  { id: "t_3", authorDisplay: "Sharmin H.", context: "Pelvic floor therapy", quote: "I was embarrassed to ask about leaking, but the physiotherapist was kind and clear. The exercises were simple and I noticed a change within weeks.", isPublished: true, isSample: false },
 ];
 
 export const seoFixtures: SeoEntry[] = [
-  { pageKey: "home", title: "Femur Physiotherapy & Wellness Center", description: "Personalised physiotherapy, rehabilitation and wellness consultancy in Uttara, Dhaka. Book online.", updatedAt: "2026-11-01T00:00:00.000Z" },
+  { pageKey: "home", title: "Femur Physiotherapy & Wellness Center", description: "Women's and maternal physiotherapy in Uttara, Dhaka: pre-pregnancy, pregnancy and postnatal care with female physiotherapists. Book online.", updatedAt: "2026-11-01T00:00:00.000Z" },
   { pageKey: "services", title: "Physiotherapy & Rehabilitation Services", description: "Physiotherapy, pain management, sports, orthopedic, neurological and pregnancy rehabilitation.", updatedAt: "2026-11-01T00:00:00.000Z" },
   { pageKey: "pricing", title: "Pricing & Packages", description: "Session fees, packages, consultation fees and memberships.", updatedAt: "2026-11-01T00:00:00.000Z" },
 ];

@@ -25,7 +25,7 @@ export function MobileNav({ items, niraUrl, bookingHref }: { items: readonly Nav
   }, [open]);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
         type="button"
         aria-expanded={open}
@@ -51,14 +51,14 @@ export function MobileNav({ items, niraUrl, bookingHref }: { items: readonly Nav
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={cn("flex items-center justify-between border-b border-line py-4 font-display text-2xl", active ? "text-teal" : "text-teal-deep")}
+                className={cn("flex items-center justify-between border-b border-line py-3.5 font-display text-xl", active ? "text-teal" : "text-teal-deep")}
               >
                 {item.label}
                 {active && <span aria-hidden className="size-2.5 rounded-full bg-teal" />}
               </Link>
             );
           })}
-          <Link href="/account" className="border-b border-line py-4 font-display text-2xl text-teal-deep">
+          <Link href="/account" className="border-b border-line py-3.5 font-display text-xl text-teal-deep">
             My account
           </Link>
         </nav>

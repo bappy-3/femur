@@ -1,12 +1,11 @@
 import { CtaBand } from "@/components/sections/cta-band";
-import { ApproachSection } from "@/features/home/approach";
+import { ArticlesPreview } from "@/features/home/articles-preview";
 import { BookingSteps } from "@/features/home/booking-steps";
-import { ConsultancySection } from "@/features/home/consultancy";
-import { CoreServices } from "@/features/home/core-services";
 import { FaqPreview, LocationSection } from "@/features/home/faq-location";
 import { Hero } from "@/features/home/hero";
-import { Highlights } from "@/features/home/highlights";
-import { MembershipIntro } from "@/features/home/membership-intro";
+import { MaternalJourney } from "@/features/home/maternal-journey";
+import { ConsultancySection } from "@/features/home/consultancy";
+import { OtherServices } from "@/features/home/other-services";
 import { SpecialistsPreview } from "@/features/home/specialists-preview";
 import { Testimonials } from "@/features/home/testimonials";
 import { WhyFemurSection } from "@/features/home/why-femur";
@@ -15,14 +14,16 @@ import { api } from "@/services";
 
 export const revalidate = 300;
 
+/**
+ * Maternal-first homepage. Deliberately short: hero, the three stages, other physiotherapy services,
+ * why Femur, visiting specialists, the team, how booking works, stories, articles, FAQ + location, and one closing call to action.
+ */
 export default async function HomePage() {
-  const [home, settings, physio, consultancy, practitioners, plans, testimonials, faqs] = await Promise.all([
+  const [home, settings, services, practitioners, testimonials, faqs] = await Promise.all([
     api.cms.getHome(),
     api.cms.getSettings(),
-    api.catalog.listServices({ kind: "PHYSIOTHERAPY" }),
-    api.catalog.listServices({ kind: "CONSULTANCY" }),
+    api.catalog.listServices(),
     api.practitioners.list(),
-    api.pricing.listPlans(),
     api.cms.listTestimonials(),
     api.cms.listFaqs(),
   ]);
@@ -31,6 +32,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "PhysicalTherapy",
     name: settings.clinicName,
+    description: "Women's and maternal physiotherapy: pre-pregnancy, pregnancy and postnatal care.",
     url: env.siteUrl,
     telephone: settings.contact.phone,
     email: settings.contact.email,
@@ -42,15 +44,14 @@ export default async function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Hero content={home.hero} />
-      <Highlights items={home.highlights} />
-      <CoreServices services={physio} />
+      <MaternalJourney />
+      <OtherServices services={services} />
       <WhyFemurSection content={home.whyFemur} />
-      <ApproachSection content={home.approach} />
+      <ConsultancySection services={services.filter((s) => s.kind === "CONSULTANCY")} />
       <SpecialistsPreview practitioners={practitioners} />
       <BookingSteps steps={home.bookingSteps} />
-      <MembershipIntro plans={plans} />
-      <ConsultancySection services={consultancy} />
       <Testimonials items={testimonials} />
+      <ArticlesPreview />
       <FaqPreview faqs={faqs} />
       <LocationSection settings={settings} />
       <CtaBand title={home.finalCta.title} body={home.finalCta.body} />
